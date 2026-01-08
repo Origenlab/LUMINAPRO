@@ -265,7 +265,7 @@
                 "name": "¿Cuánto cuesta rentar iluminación profesional para un evento?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "El costo de renta de iluminación varía según el tipo de evento, cantidad de equipos y duración. En LUMINAPRO ofrecemos cotizaciones personalizadas sin compromiso. Contáctanos por WhatsApp al 55 2722 1736 para recibir una propuesta en menos de 24 horas."
+                    "text": "El servicio de renta de iluminación varía según el tipo de evento, cantidad de equipos y duración. En LUMINAPRO ofrecemos cotizaciones personalizadas sin compromiso. Contáctanos por WhatsApp al 55 2722 1736 para recibir una propuesta en menos de 24 horas."
                 }
             },
             {
@@ -1115,11 +1115,14 @@
 
         .testimonio-card {
             background-color: #fff;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 2rem;
             position: relative;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .testimonio-header {
@@ -1130,12 +1133,13 @@
         }
 
         .testimonio-avatar {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
             border: 3px solid var(--color-accent);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
         .testimonio-avatar img {
@@ -1163,14 +1167,17 @@
         .testimonio-author {
             font-weight: 700;
             color: var(--color-text-dark);
-            margin-bottom: 0.125rem;
-            font-size: 1.0625rem;
+            margin-bottom: 0.25rem;
+            font-size: 1.125rem;
         }
 
         .testimonio-role {
             font-size: 0.8125rem;
-            color: #888;
+            color: var(--color-accent);
             margin-bottom: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .testimonio-stars {
@@ -1181,25 +1188,69 @@
 
         .testimonio-stars i {
             color: #FFB800;
-            font-size: 0.9375rem;
+            font-size: 1rem;
         }
 
         .testimonio-text {
             font-size: 1rem;
             color: #555;
-            margin-bottom: 0;
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
-            line-height: 1.75;
+            line-height: 1.8;
+            flex-grow: 1;
+        }
+
+        .testimonio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(196, 154, 61, 0.1));
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            width: fit-content;
+        }
+
+        .testimonio-link:hover {
+            background: linear-gradient(135deg, var(--color-accent), #c49a3d);
+            color: #fff;
+        }
+
+        .testimonio-link i {
+            font-size: 0.75rem;
         }
 
         .testimonio-quote-icon {
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--color-accent);
-            opacity: 0.15;
+            opacity: 0.1;
+        }
+
+        .testimonio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #28a745;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 50px;
+            margin-top: auto;
+            width: fit-content;
+        }
+
+        .testimonio-badge i {
+            font-size: 0.875rem;
         }
 
         /* ========================================
@@ -2129,10 +2180,7 @@
                 <div class="pilares-grid">
                     <div class="pilar-card">
                         <div class="pilar-img">
-                            <!-- Reemplazar con: <img src="img/pilares/diseno.jpg" alt="Diseño personalizado de iluminación"> -->
-                            <div class="pilar-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/disenador-iluminacion-planos-oficina-profesional.webp" alt="Diseño personalizado de iluminación para eventos" loading="lazy">
                         </div>
                         <div class="pilar-content">
                             <h3>Diseño Personalizado</h3>
@@ -2142,10 +2190,7 @@
 
                     <div class="pilar-card">
                         <div class="pilar-img">
-                            <!-- Reemplazar con: <img src="img/pilares/tecnologia.jpg" alt="Tecnología de iluminación de vanguardia"> -->
-                            <div class="pilar-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/equipo-cabezas-moviles-robe-consola-dmx-profesional.webp" alt="Tecnología de iluminación de vanguardia" loading="lazy">
                         </div>
                         <div class="pilar-content">
                             <h3>Tecnología de Vanguardia</h3>
@@ -2155,10 +2200,7 @@
 
                     <div class="pilar-card">
                         <div class="pilar-img">
-                            <!-- Reemplazar con: <img src="img/pilares/operacion.jpg" alt="Operación profesional de iluminación"> -->
-                            <div class="pilar-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/tecnico-iluminacion-grandma2-concierto-profesional.webp" alt="Operación profesional de iluminación" loading="lazy">
                         </div>
                         <div class="pilar-content">
                             <h3>Operación Profesional</h3>
@@ -2168,10 +2210,7 @@
 
                     <div class="pilar-card">
                         <div class="pilar-img">
-                            <!-- Reemplazar con: <img src="img/pilares/confiabilidad.jpg" alt="Confiabilidad absoluta en eventos"> -->
-                            <div class="pilar-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/almacen-equipo-iluminacion-cabezas-moviles-renta.webp" alt="Confiabilidad absoluta en eventos" loading="lazy">
                         </div>
                         <div class="pilar-content">
                             <h3>Confiabilidad Absoluta</h3>
@@ -2194,10 +2233,7 @@
                     <!-- Guirnaldas -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/guirnaldas.jpg" alt="Renta de guirnaldas de luz para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/guirnaldas/renta-guirnaldas-luz-boda-jardin-cena-elegante.webp" alt="Renta de guirnaldas de luz para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Guirnaldas</h3>
@@ -2209,10 +2245,7 @@
                     <!-- Luz Neón -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/luz-neon.jpg" alt="Renta de luz neón para fiestas y eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/letrero-neon-personalizado-boda-flores-velas.webp" alt="Renta de luz neón para fiestas y eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Luz Neón</h3>
@@ -2224,10 +2257,7 @@
                     <!-- Luz Negra -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/luz-negra.jpg" alt="Renta de luz negra UV para fiestas CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/fiesta-neon-luz-negra-pintura-fluorescente.webp" alt="Renta de luz negra UV para fiestas CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Luz Negra</h3>
@@ -2239,10 +2269,7 @@
                     <!-- City Color -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/city-color.jpg" alt="Iluminación City Color LED para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/iluminacion-arquitectonica-edificio-magenta-nocturna.webp" alt="Iluminación City Color LED para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>City Color</h3>
@@ -2254,10 +2281,7 @@
                     <!-- Sky Tracker -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/sky-tracker.jpg" alt="Alquiler de Sky Tracker para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/sky-trackers-haz-luz-cielo-evento-exterior.webp" alt="Alquiler de Sky Tracker para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Sky Tracker</h3>
@@ -2269,10 +2293,7 @@
                     <!-- Cabezas Móviles -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/cabezas-moviles.jpg" alt="Renta de cabezas móviles para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/cabezas-moviles/renta-cabezas-moviles-dj-concierto-luces-beam.webp" alt="Renta de cabezas móviles para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Cabezas Móviles</h3>
@@ -2284,10 +2305,7 @@
                     <!-- Iluminación Láser -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/laser.jpg" alt="Alquiler de iluminación láser para eventos"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/show-laser-verde-concierto-multitud-festival.webp" alt="Alquiler de iluminación láser para eventos" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Iluminación Láser</h3>
@@ -2299,10 +2317,7 @@
                     <!-- Luces Arquitectónicas -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/arquitectonicas.jpg" alt="Iluminación arquitectónica para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/iluminacion-fachada-edificio-rosa-azul-exterior.webp" alt="Iluminación arquitectónica para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Luces Arquitectónicas</h3>
@@ -2314,10 +2329,7 @@
                     <!-- Cascadas LED -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/cascadas-led.jpg" alt="Alquiler de cascadas LED para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/cascada-luces-led-novios-boda-romantica.webp" alt="Alquiler de cascadas LED para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Cascadas LED</h3>
@@ -2329,10 +2341,7 @@
                     <!-- Proyector de Gobos -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/gobos.jpg" alt="Alquiler de proyectores de gobos para eventos"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/proyector-gobo-monograma-pista-baile-boda.webp" alt="Alquiler de proyectores de gobos para eventos" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Proyector de Gobos</h3>
@@ -2344,10 +2353,7 @@
                     <!-- City Light -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/city-light.jpg" alt="Renta de City Light para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/iluminacion-ambar-salon-banquetes-evento-social.webp" alt="Renta de City Light para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>City Light</h3>
@@ -2359,10 +2365,7 @@
                     <!-- Seguidor de Luz -->
                     <div class="servicio-card">
                         <div class="servicio-img">
-                            <!-- Reemplazar con: <img src="img/servicios/seguidor.jpg" alt="Alquiler de seguidor de luz para eventos CDMX"> -->
-                            <div class="servicio-img-placeholder">
-                                <i class="fas fa-image"></i>
-                            </div>
+                            <img src="img/index/cantante-evento-privado-iluminacion-escenario-ambar.webp" alt="Alquiler de seguidor de luz para eventos CDMX" loading="lazy">
                         </div>
                         <div class="servicio-content">
                             <h3>Seguidor de Luz</h3>
@@ -2383,17 +2386,16 @@
                 <p class="section-intro">La satisfacción de nuestros clientes es nuestra mejor carta de presentación. Conoce sus experiencias trabajando con LUMINAPRO.</p>
 
                 <div class="testimonios-grid">
-                    <!-- Testimonio 1 -->
+                    <!-- Testimonio 1 - INFLAPY -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/maria.jpg" alt="María González"> -->
-                                <div class="testimonio-avatar-placeholder">MG</div>
+                                <img src="img/index/testimonio-cliente-mujer-salon-boda.webp" alt="INFLAPY - Proveedor de inflables" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">María González</p>
-                                <p class="testimonio-role">Boda en Hacienda San Antonio</p>
+                                <p class="testimonio-author">INFLAPY</p>
+                                <p class="testimonio-role">Proveedor de Inflables</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2403,20 +2405,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">LUMINAPRO transformó por completo nuestro salón. Mis invitados no dejaban de preguntar quién había hecho la iluminación. Las fotos quedaron increíbles.</p>
+                        <p class="testimonio-text">Trabajar con LUMINAPRO ha sido excepcional. En eventos familiares donde combinamos inflables con iluminación, el resultado es mágico. Son puntuales, profesionales y siempre superan las expectativas.</p>
+                        <a href="https://inflablesparafiestas.com.mx/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> inflablesparafiestas.com.mx
+                        </a>
                     </div>
 
-                    <!-- Testimonio 2 -->
+                    <!-- Testimonio 2 - Fantasy Globos -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/roberto.jpg" alt="Roberto Mendoza"> -->
-                                <div class="testimonio-avatar-placeholder">RM</div>
+                                <img src="img/index/director-produccion-eventos-escenario-tecnico.webp" alt="Fantasy Globos - Decoración con globos" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Roberto Mendoza</p>
-                                <p class="testimonio-role">Director de Producción</p>
+                                <p class="testimonio-author">Fantasy Globos</p>
+                                <p class="testimonio-role">Decoración con Globos</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2426,20 +2430,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">Profesionalismo total. Cumplieron con el rider técnico al 100%, llegaron a tiempo y solucionaron cada detalle sobre la marcha. Ya son nuestro proveedor de planta.</p>
+                        <p class="testimonio-text">La iluminación de LUMINAPRO hace que nuestras decoraciones con globos luzcan espectaculares. Los colores resaltan increíblemente y las fotos quedan perfectas. Son el complemento ideal para nuestro trabajo.</p>
+                        <a href="https://fantasyglobos.com.mx/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> fantasyglobos.com.mx
+                        </a>
                     </div>
 
-                    <!-- Testimonio 3 -->
+                    <!-- Testimonio 3 - Mesas de Dulces -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/laura.jpg" alt="Laura Sánchez"> -->
-                                <div class="testimonio-avatar-placeholder">LS</div>
+                                <img src="img/index/coordinadora-eventos-tablet-agenda-profesional.webp" alt="Mesas de Dulces - Postres para eventos" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Laura Sánchez</p>
-                                <p class="testimonio-role">Coordinadora de Eventos</p>
+                                <p class="testimonio-author">Mesas de Dulces</p>
+                                <p class="testimonio-role">Postres y Dulces para Eventos</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2449,20 +2455,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">La diferencia entre nuestra convención 2023 y 2024 fue la iluminación de LUMINAPRO. Todo subió de nivel. La inversión valió cada peso.</p>
+                        <p class="testimonio-text">Nuestras mesas de dulces lucen increíbles con la iluminación de LUMINAPRO. Los tonos cálidos realzan los colores de los postres y crean un ambiente irresistible. ¡Los invitados siempre quedan encantados!</p>
+                        <a href="https://mesas-de-dulces.com/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> mesas-de-dulces.com
+                        </a>
                     </div>
 
-                    <!-- Testimonio 4 -->
+                    <!-- Testimonio 4 - Sonido para Eventos -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/carlos.jpg" alt="Carlos Ramírez"> -->
-                                <div class="testimonio-avatar-placeholder">CR</div>
+                                <img src="img/index/testimonio-cliente-hombre-joven-profesional.webp" alt="Sonido para Eventos - Audio profesional" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Carlos Ramírez</p>
-                                <p class="testimonio-role">XV Años en Jardín Paraíso</p>
+                                <p class="testimonio-author">Sonido para Eventos</p>
+                                <p class="testimonio-role">Audio Profesional</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2472,20 +2480,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">Mi hija quedó fascinada con la iluminación de su fiesta. El efecto de las luces con la neblina fue espectacular. Todos los invitados quedaron impresionados.</p>
+                        <p class="testimonio-text">Sonido e iluminación van de la mano, y con LUMINAPRO la sincronización es perfecta. Su equipo técnico entiende nuestras necesidades y juntos creamos experiencias audiovisuales memorables.</p>
+                        <a href="https://sonidoparaeventos.com.mx/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> sonidoparaeventos.com.mx
+                        </a>
                     </div>
 
-                    <!-- Testimonio 5 -->
+                    <!-- Testimonio 5 - Eventech -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/ana.jpg" alt="Ana Martínez"> -->
-                                <div class="testimonio-avatar-placeholder">AM</div>
+                                <img src="img/index/coordinadora-eventos-wedding-planner-profesional.webp" alt="Eventech - Wedding Planner" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Ana Martínez</p>
-                                <p class="testimonio-role">Wedding Planner</p>
+                                <p class="testimonio-author">Eventech</p>
+                                <p class="testimonio-role">Organizadora de Bodas</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2495,20 +2505,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">Como wedding planner, he trabajado con muchos proveedores. LUMINAPRO es de los pocos que realmente entienden la visión del cliente y la superan.</p>
+                        <p class="testimonio-text">Como wedding planners, hemos trabajado con muchos proveedores de iluminación. LUMINAPRO es de los pocos que realmente entienden la visión de nuestras novias y la superan. Son nuestro aliado de confianza.</p>
+                        <a href="https://eventech.mx/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> eventech.mx
+                        </a>
                     </div>
 
-                    <!-- Testimonio 6 -->
+                    <!-- Testimonio 6 - Avantexpo -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/fernando.jpg" alt="Fernando López"> -->
-                                <div class="testimonio-avatar-placeholder">FL</div>
+                                <img src="img/index/testimonio-cliente-empresario-satisfecho-servicio.webp" alt="Avantexpo - Stands para eventos" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Fernando López</p>
-                                <p class="testimonio-role">Gerente de Marketing</p>
+                                <p class="testimonio-author">Avantexpo</p>
+                                <p class="testimonio-role">Stands para Eventos</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2518,20 +2530,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">El lanzamiento de nuestro producto fue un éxito rotundo. La iluminación creó el ambiente perfecto para nuestra marca. Definitivamente los volveremos a contratar.</p>
+                        <p class="testimonio-text">Nuestros stands para exposiciones lucen impresionantes con la iluminación de LUMINAPRO. La luz bien diseñada marca la diferencia entre un stand común y uno que atrae todas las miradas.</p>
+                        <a href="https://avantexpo.com.mx/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> avantexpo.com.mx
+                        </a>
                     </div>
 
-                    <!-- Testimonio 7 -->
+                    <!-- Testimonio 7 - Renta de Inflables -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/patricia.jpg" alt="Patricia Hernández"> -->
-                                <div class="testimonio-avatar-placeholder">PH</div>
+                                <img src="img/index/testimonio-cliente-mujer-elegante-perlas.webp" alt="Renta de Inflables - Brincolines para fiestas" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Patricia Hernández</p>
-                                <p class="testimonio-role">Boda en Terrazas del Valle</p>
+                                <p class="testimonio-author">Renta de Inflables</p>
+                                <p class="testimonio-role">Brincolines y Juegos</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2541,20 +2555,22 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">Desde el primer contacto fueron muy profesionales. Nos asesoraron perfectamente y el día de la boda todo salió impecable. ¡Gracias por hacer mágica nuestra noche!</p>
+                        <p class="testimonio-text">En fiestas infantiles y días de familia, la iluminación de LUMINAPRO transforma el ambiente cuando cae la noche. Los inflables se ven espectaculares y los niños disfrutan aún más. ¡Gran equipo!</p>
+                        <a href="https://renta-de-inflables.com/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> renta-de-inflables.com
+                        </a>
                     </div>
 
-                    <!-- Testimonio 8 -->
+                    <!-- Testimonio 8 - Podiumex -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/jorge.jpg" alt="Jorge Vargas"> -->
-                                <div class="testimonio-avatar-placeholder">JV</div>
+                                <img src="img/index/testimonio-ejecutivo-senior-evento-gala.webp" alt="Podiumex - Renta de podiums" loading="lazy">
                             </div>
                             <div class="testimonio-info">
-                                <p class="testimonio-author">Jorge Vargas</p>
-                                <p class="testimonio-role">Productor de Eventos</p>
+                                <p class="testimonio-author">Podiumex</p>
+                                <p class="testimonio-role">Renta de Podiums</p>
                             </div>
                         </div>
                         <div class="testimonio-stars">
@@ -2564,16 +2580,18 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonio-text">Excelente inventario de equipos y personal muy capacitado. Han sido clave en la producción de nuestros conciertos. La relación calidad-precio es inmejorable.</p>
+                        <p class="testimonio-text">Nuestros podiums y atriles para conferencias lucen profesionales con la iluminación de LUMINAPRO. Saben exactamente cómo iluminar a los ponentes y crear el ambiente corporativo perfecto.</p>
+                        <a href="https://podiumex.com/" class="testimonio-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i> podiumex.com
+                        </a>
                     </div>
 
-                    <!-- Testimonio 9 -->
+                    <!-- Testimonio 9 - Cliente Directo -->
                     <div class="testimonio-card">
                         <i class="fas fa-quote-right testimonio-quote-icon"></i>
                         <div class="testimonio-header">
                             <div class="testimonio-avatar">
-                                <!-- Reemplazar con: <img src="img/testimonios/daniela.jpg" alt="Daniela Torres"> -->
-                                <div class="testimonio-avatar-placeholder">DT</div>
+                                <img src="img/index/testimonio-cliente-mujer-ejecutiva-profesional.webp" alt="Daniela Torres - Evento Corporativo" loading="lazy">
                             </div>
                             <div class="testimonio-info">
                                 <p class="testimonio-author">Daniela Torres</p>
@@ -2588,6 +2606,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <p class="testimonio-text">Contratamos a LUMINAPRO para nuestra gala anual y el resultado fue extraordinario. La iluminación elevó completamente la experiencia de nuestros invitados VIP.</p>
+                        <span class="testimonio-badge"><i class="fas fa-check-circle"></i> Cliente Verificado</span>
                     </div>
                 </div>
             </div>
@@ -2602,28 +2621,22 @@
                 <p class="section-intro">Trabajamos con los mejores proveedores de la industria para ofrecerte una experiencia integral. Conoce a nuestros aliados estratégicos.</p>
 
                 <div class="aliados-grid">
-                    <!-- Inflables para Fiestas -->
+                    <!-- INFLAPY -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/inflables.jpg" alt="Renta de inflables y brincolines para fiestas infantiles CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/fiesta-infantil-inflable-castillo-globos.webp" alt="INFLAPY - Renta de inflables y brincolines para fiestas infantiles CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
-                            <h3>Inflables para Fiestas</h3>
+                            <h3>INFLAPY</h3>
                             <p>Brincolines, toboganes y juegos inflables para fiestas infantiles y eventos familiares.</p>
-                            <a href="https://inflablesparafiestas.com.mx/" class="aliado-link" target="_blank" rel="noopener noreferrer">Inflables para fiestas <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="https://inflablesparafiestas.com.mx/" class="aliado-link" target="_blank" rel="noopener noreferrer">Visitar INFLAPY <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- Globos -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/globos.jpg" alt="Decoración con globos y arcos tropicales para fiestas CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/arco-globos-rosa-dorado-decoracion-boda.webp" alt="Decoración con globos y arcos tropicales para fiestas CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Globos</h3>
@@ -2635,10 +2648,7 @@
                     <!-- Mesa de Dulces -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/mesa-dulces.jpg" alt="Mesa de dulces y postres decorada para bodas CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/mesa-postres-macarons-cupcakes-boda-elegante.webp" alt="Mesa de dulces y postres decorada para bodas CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Mesa de Dulces</h3>
@@ -2650,10 +2660,7 @@
                     <!-- Bocinas -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/bocinas.jpg" alt="Renta de bocinas y sonido profesional para bodas CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/dj-profesional-boda-equipo-sonido-luces.webp" alt="Renta de bocinas y sonido profesional para bodas CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Bocinas</h3>
@@ -2665,10 +2672,7 @@
                     <!-- Organizadora de Bodas -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/wedding-planner.jpg" alt="Wedding planner organizando boda CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/productora-eventos-coordinando-equipo-montaje.webp" alt="Wedding planner organizando boda CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Organizadora de Bodas</h3>
@@ -2680,10 +2684,7 @@
                     <!-- Stands para Eventos -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/stands.jpg" alt="Stand profesional para expo y ferias corporativas CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/stand-expo-corporativo-iluminacion-profesional.webp" alt="Stand profesional para expo y ferias corporativas CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Stands para Eventos</h3>
@@ -2695,10 +2696,7 @@
                     <!-- Renta de Inflables -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/renta-inflables.jpg" alt="Renta de inflables brincolines para fiestas infantiles CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/juegos-inflables-team-building-corporativo.webp" alt="Renta de inflables brincolines para fiestas infantiles CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Renta de Inflables</h3>
@@ -2710,10 +2708,7 @@
                     <!-- Renta de Podiums -->
                     <article class="aliado-card">
                         <div class="aliado-img">
-                            <!-- Reemplazar con: <img src="img/aliados/podiums.jpg" alt="Renta de podiums y atriles para eventos corporativos CDMX"> -->
-                            <div class="aliado-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/index/podio-conferencia-iluminacion-azul-corporativa.webp" alt="Renta de podiums y atriles para eventos corporativos CDMX" loading="lazy">
                         </div>
                         <div class="aliado-content">
                             <h3>Renta de Podiums</h3>
@@ -2792,7 +2787,7 @@
 
                             <div class="form-group">
                                 <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="55 1234 5678" required>
+                                <input type="tel" id="telefono" name="telefono" placeholder="55 2722 1736" required>
                             </div>
 
                             <div class="form-group">
