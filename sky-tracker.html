@@ -851,6 +851,17 @@
             border-color: var(--color-accent);
         }
 
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+
         .galeria-cta {
             text-align: center;
         }
@@ -894,6 +905,15 @@
         .tipo-img {
             min-height: 350px;
             position: relative;
+        }
+
+        .tipo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .tipo-img-placeholder {
@@ -1321,6 +1341,17 @@
             font-size: 2rem;
             color: var(--color-accent);
             opacity: 0.2;
+        }
+
+        .inspiracion-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .inspiracion-item:hover img {
+            transform: scale(1.05);
         }
 
         .inspiracion-cta {
@@ -2154,7 +2185,7 @@
                 <div class="experiencia-grid">
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/sky-trackers-haz-luz-cielo-evento-exterior.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/skytracker/renta-skytracker-profesional-haz-luz-eventos.webp" alt="Renta de Sky Tracker para inauguraciones CDMX" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Inauguraciones Memorables</h3>
@@ -2164,7 +2195,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/concierto-cabezas-moviles-beam-humo-escenario.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/skytracker/skytracker-multiples-haces-ciudad-evento-nocturno.webp" alt="Sky Tracker para conciertos y festivales" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Conciertos y Festivales</h3>
@@ -2174,7 +2205,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/show-luces-concierto-truss-cabezas-moviles.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/skytracker/luces-antiaereas-inauguracion-evento-exterior.webp" alt="Sky Tracker para eventos de alto perfil" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Eventos de Alto Perfil</h3>
@@ -2195,31 +2226,22 @@
 
                 <div class="galeria-grid">
                     <div class="galeria-item">
-                        <img src="img/index/sky-trackers-haz-luz-cielo-evento-exterior.webp" alt="Galería de iluminación profesional" loading="lazy">
+                        <img src="img/skytracker/renta-skytracker-profesional-haz-luz-eventos.webp" alt="Renta de Sky Tracker profesional para eventos" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/concierto-cabezas-moviles-beam-humo-escenario.webp" alt="Galería de iluminación profesional" loading="lazy">
+                        <img src="img/skytracker/skytracker-led-alta-potencia-iluminacion-cielo.webp" alt="Sky Tracker LED alta potencia" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/show-luces-concierto-truss-cabezas-moviles.webp" alt="Galería de iluminación profesional" loading="lazy">
+                        <img src="img/skytracker/renta-luces-antiaereas-eventos-corporativos.webp" alt="Luces antiaéreas para eventos corporativos" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Festival de música con Sky Trackers sincronizados</span>
-                        </div>
+                        <img src="img/skytracker/skytracker-multiples-haces-ciudad-evento-nocturno.webp" alt="Festival de música con Sky Trackers sincronizados" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Apertura de negocio con haces al cielo</span>
-                        </div>
+                        <img src="img/skytracker/renta-luces-antiaereas-haz-vertical-cielo.webp" alt="Apertura de negocio con haces al cielo" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Gala corporativa con presencia nocturna</span>
-                        </div>
+                        <img src="img/skytracker/luces-antiaereas-inauguracion-evento-exterior.webp" alt="Gala corporativa con presencia nocturna" loading="lazy">
                     </div>
                 </div>
 
@@ -2241,9 +2263,7 @@
                     <!-- Tipo 1: Sky Tracker 2000W Single Beam -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-satellite-dish" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/skytracker-compacto-portatil-exterior.webp" alt="Sky Tracker 2000W Single Beam" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Sky Tracker 2000W Single Beam</h3>
@@ -2264,9 +2284,7 @@
                     <!-- Tipo 2: Sky Tracker 4000W High Power -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-bolt" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/renta-skytracker-fuente-poder-externa-cdmx.webp" alt="Sky Tracker 4000W High Power" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Sky Tracker 4000W High Power</h3>
@@ -2287,9 +2305,7 @@
                     <!-- Tipo 3: Sky Tracker 7000W Extreme -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-sun" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/skytracker-7500w-neutrik-profesional-potente.webp" alt="Sky Tracker 7000W Extreme" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Sky Tracker 7000W Extreme</h3>
@@ -2310,9 +2326,7 @@
                     <!-- Tipo 4: Sky Tracker 4-Beam -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-asterisk" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/luces-antiaereas-plata-profesional-eventos.webp" alt="Sky Tracker 4-Beam Multi-haz" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Sky Tracker 4-Beam (Multi-haz)</h3>
@@ -2333,9 +2347,7 @@
                     <!-- Tipo 5: Sky Tracker con Color CMY -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-palette" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/renta-skytracker-powercon-control-dmx.webp" alt="Sky Tracker con Mezcla CMY" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Sky Tracker con Mezcla CMY</h3>
@@ -2367,10 +2379,7 @@
                 <div class="aplicaciones-grid">
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/inauguracion-sky-tracker.jpg" alt="Inauguración de centro comercial con Sky Tracker" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/luces-antiaereas-inauguracion-evento-exterior.webp" alt="Inauguración de centro comercial con Sky Tracker" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Inauguraciones y Aperturas</h3>
@@ -2380,10 +2389,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/concierto-sky-tracker.jpg" alt="Concierto masivo con Sky Trackers" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/skytracker-multiples-haces-ciudad-evento-nocturno.webp" alt="Concierto masivo con Sky Trackers" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Conciertos y Festivales</h3>
@@ -2393,10 +2399,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/premiere-sky-tracker.jpg" alt="Premiere de película con Sky Tracker estilo Hollywood" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/renta-luces-antiaereas-haz-vertical-cielo.webp" alt="Premiere de película con Sky Tracker estilo Hollywood" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Premieres y Lanzamientos</h3>
@@ -2406,10 +2409,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/boda-sky-tracker.jpg" alt="Boda espectacular con Sky Tracker" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/renta-skytracker-compacto-haz-potente-negro.webp" alt="Boda espectacular con Sky Tracker" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Bodas Espectaculares</h3>
@@ -2419,10 +2419,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/xv-sky-tracker.jpg" alt="XV años con Sky Tracker" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/skytracker-phase-one-haz-luz-blanca-potente.webp" alt="XV años con Sky Tracker" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>XV Años de Ensueño</h3>
@@ -2432,10 +2429,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/corporativo-sky-tracker.jpg" alt="Evento corporativo con Sky Tracker" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/skytracker/renta-luces-antiaereas-eventos-corporativos.webp" alt="Evento corporativo con Sky Tracker" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Galas Corporativas</h3>
@@ -2701,28 +2695,28 @@
 
                 <div class="inspiracion-grid">
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/renta-skytracker-profesional-haz-luz-eventos.webp" alt="Inspiración Sky Tracker profesional" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/skytracker-led-alta-potencia-iluminacion-cielo.webp" alt="Inspiración Sky Tracker LED alta potencia" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/renta-luces-antiaereas-eventos-corporativos.webp" alt="Inspiración luces antiaéreas corporativas" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/skytracker-7500w-neutrik-profesional-potente.webp" alt="Inspiración Sky Tracker 7500W" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/skytracker-angulo-85-grados-fresnel-profesional.webp" alt="Inspiración Sky Tracker ángulo 85 grados" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/luces-antiaereas-angulo-ajustable-4-85-grados.webp" alt="Inspiración luces antiaéreas ajustables" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/skytracker-dmx-powercon-phase-one-profesional.webp" alt="Inspiración Sky Tracker DMX Phase One" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/skytracker/skytracker-apertura-variable-eventos-nocturnos.webp" alt="Inspiración Sky Tracker apertura variable" loading="lazy">
                     </div>
                 </div>
 
