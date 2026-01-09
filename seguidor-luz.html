@@ -401,6 +401,74 @@
             transform: translateY(-2px);
         }
 
+        /* Dropdown Menu */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-dropdown-toggle i {
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 0.75rem 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            font-weight: 400;
+            transition: all 0.2s ease;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--color-accent-primary);
+            padding-left: 1.5rem;
+        }
+
+        .nav-dropdown-divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: 0.5rem 0;
+        }
+
+        .nav-dropdown-menu .dropdown-all {
+            color: var(--color-accent-primary);
+            font-weight: 600;
+        }
+
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -838,6 +906,35 @@
         .gallery-caption p {
             font-size: 0.85rem;
             color: var(--color-text-muted);
+        }
+
+        /* === INSPIRACIÓN === */
+        .inspiracion {
+            background: var(--color-bg-tertiary);
+        }
+
+        .inspiracion-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+        }
+
+        .inspiracion-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .inspiracion-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .inspiracion-item:hover img {
+            transform: scale(1.08);
         }
 
         /* === APPLICATIONS === */
@@ -1751,6 +1848,35 @@
                 display: flex;
             }
 
+            .nav-dropdown-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0.5rem 0;
+                min-width: auto;
+            }
+
+            .nav-dropdown-menu a {
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            .nav-dropdown-menu a:hover {
+                padding-left: 0;
+            }
+
+            .nav-dropdown-divider {
+                display: none;
+            }
+
+            .nav-dropdown-menu .dropdown-all {
+                display: none;
+            }
+
             .hero-stats {
                 flex-direction: column;
                 gap: var(--space-5);
@@ -1795,6 +1921,10 @@
 
             .faq-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .inspiracion-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .form-grid {
@@ -1859,7 +1989,25 @@
             <a href="./" class="logo">Lumina<span>Pro</span></a>
             <nav class="nav-menu" id="navMenu">
                 <a href="./" class="nav-link">Inicio</a>
-                <a href="servicios.html" class="nav-link">Servicios</a>
+                <div class="nav-dropdown">
+                    <a href="servicios.html" class="nav-link nav-dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="guirnaldas.html">Guirnaldas de Luz</a>
+                        <a href="cabezas-moviles.html">Cabezas Móviles</a>
+                        <a href="laser.html">Iluminación Láser</a>
+                        <a href="luces-arquitectonicas.html">Luces Arquitectónicas</a>
+                        <a href="proyector-gobos.html">Proyector de Gobos</a>
+                        <a href="sky-tracker.html">Sky Tracker</a>
+                        <a href="luz-neon.html">Luz Neón</a>
+                        <a href="luz-negra.html">Luz Negra UV</a>
+                        <a href="city-color.html">City Color</a>
+                        <a href="city-light.html">City Light</a>
+                        <a href="cascadas-led.html">Cascadas LED</a>
+                        <a href="seguidor-luz.html">Seguidor de Luz</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="servicios.html" class="dropdown-all">Ver Todos</a>
+                    </div>
+                </div>
                 <a href="./#testimonios" class="nav-link">Testimonios</a>
                 <a href="./#aliados" class="nav-link">Aliados</a>
                 <a href="./#contacto" class="nav-link">Contacto</a>
@@ -2006,42 +2154,42 @@
                 </header>
                 <div class="gallery-grid">
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/primer-baile-novios-spotlight-boda-romantica.webp" alt="Primer baile de novios con seguidor de luz" loading="lazy">
+                        <img src="img/seguidor-de-luz/renta-seguidor-luz-primer-baile-novios-boda.webp" alt="Primer baile de novios con seguidor de luz" loading="lazy">
                         <div class="gallery-caption">
                             <h4>Primer Baile</h4>
                             <p>Boda en Hacienda</p>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/primer-baile-novios-iluminacion-ambiental-boda.webp" alt="Vals de XV años con iluminación spotlight" loading="lazy">
+                        <img src="img/seguidor-de-luz/alquiler-followspot-baile-nupcial-iluminacion-profesional.webp" alt="Vals de XV años con iluminación spotlight" loading="lazy">
                         <div class="gallery-caption">
                             <h4>Vals de XV Años</h4>
                             <p>Salón de Fiestas</p>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/conferencia-corporativa-ponente-podio-backdrop.webp" alt="Presentación corporativa con seguidor" loading="lazy">
+                        <img src="img/seguidor-de-luz/renta-followspot-conferencia-ponente-corporativo.webp" alt="Presentación corporativa con seguidor" loading="lazy">
                         <div class="gallery-caption">
                             <h4>Presentación Corporativa</h4>
                             <p>Centro de Convenciones</p>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/cantante-evento-privado-iluminacion-escenario-ambar.webp" alt="Concierto con seguidor de luz profesional" loading="lazy">
+                        <img src="img/seguidor-de-luz/renta-cañon-seguidor-concierto-guitarrista-rock.webp" alt="Concierto con seguidor de luz profesional" loading="lazy">
                         <div class="gallery-caption">
                             <h4>Concierto</h4>
                             <p>Auditorio</p>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/mesa-postres-macarons-cupcakes-boda-elegante.webp" alt="Momento especial iluminado" loading="lazy">
+                        <img src="img/seguidor-de-luz/seguidor-luz-entrada-novia-iglesia-boda-elegante.webp" alt="Entrada de novia iluminada con followspot" loading="lazy">
                         <div class="gallery-caption">
-                            <h4>Corte de Pastel</h4>
+                            <h4>Entrada de Novia</h4>
                             <p>Boda Jardín</p>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="img/index/artista-escenario-gala-iluminacion-profesional.webp" alt="Obra de teatro con spotlight" loading="lazy">
+                        <img src="img/seguidor-de-luz/renta-cañon-seguidor-teatro-actor-escenario.webp" alt="Obra de teatro con spotlight" loading="lazy">
                         <div class="gallery-caption">
                             <h4>Obra de Teatro</h4>
                             <p>Teatro Principal</p>
@@ -2267,7 +2415,7 @@
                 <div class="operator-grid">
                     <div class="operator-visual animate-on-scroll">
                         <div class="operator-image">
-                            <i class="fas fa-user-cog operator-icon-large"></i>
+                            <img src="img/seguidor-de-luz/operador-seguidor-luz-profesional-boda-primer-baile.webp" alt="Operador técnico profesional de seguidor de luz" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);">
                             <div class="operator-badge">
                                 <i class="fas fa-check-circle"></i>
                                 Incluido en el Servicio
@@ -2602,6 +2750,58 @@
             </div>
         </section>
 
+        <!-- === INSPIRACIÓN === -->
+        <section class="inspiracion section">
+            <div class="container">
+                <header class="section-header animate-on-scroll">
+                    <span class="section-badge">Inspiración</span>
+                    <h2 class="section-title">Más <span>Momentos</span> Iluminados</h2>
+                    <p class="section-subtitle">
+                        Descubre cómo el seguidor de luz transforma cada tipo de evento
+                        en una experiencia visual inolvidable.
+                    </p>
+                </header>
+                <div class="inspiracion-grid">
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/renta-seguidor-luz-boda-romantica-humo-novios.webp" alt="Seguidor de luz en boda romántica con humo" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/followspot-entrada-novia-salon-evento-humo.webp" alt="Entrada de novia con followspot y humo" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/seguidor-luz-ballet-bailarina-escenario-profesional.webp" alt="Bailarina de ballet iluminada con seguidor" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/renta-seguidor-luz-danza-clasica-presentacion.webp" alt="Presentación de danza clásica con spotlight" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/alquiler-followspot-opera-cantante-orquesta.webp" alt="Cantante de ópera con seguidor de luz" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/seguidor-luz-soprano-teatro-produccion-musical.webp" alt="Soprano en teatro iluminada con followspot" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/seguidor-luz-pianista-recital-piano-steinway.webp" alt="Pianista en recital con seguidor de luz" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/alquiler-seguidor-luz-concierto-piano-clasico.webp" alt="Concierto de piano clásico con spotlight" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/followspot-musico-guitarra-escenario-evento.webp" alt="Guitarrista en concierto con seguidor" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/seguidor-luz-ted-talk-speaker-presentacion.webp" alt="Speaker en conferencia con seguidor de luz" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/alquiler-cañon-seguidor-show-artista-arena.webp" alt="Artista en arena con cañón seguidor" loading="lazy">
+                    </div>
+                    <div class="inspiracion-item animate-on-scroll">
+                        <img src="img/seguidor-de-luz/tecnico-followspot-iluminando-novia-ceremonia-boda.webp" alt="Técnico operando followspot en boda" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- === CONTACT FORM === -->
         <section class="contact-form section" id="cotizar">
             <div class="container">
@@ -2714,17 +2914,19 @@
                             <a href="cabezas-moviles.html">Cabezas Móviles</a>
                             <a href="laser.html">Iluminación Láser</a>
                             <a href="luces-arquitectonicas.html">Luces Arquitectónicas</a>
-                            <a href="servicios.html">Ver todos</a>
+                            <a href="proyector-gobos.html">Proyector de Gobos</a>
+                            <a href="sky-tracker.html">Sky Tracker</a>
                         </nav>
                     </div>
                     <div class="footer-column">
                         <h4>Equipos</h4>
                         <nav class="footer-links">
-                            <a href="seguidor-luz.html">Seguidor de Luz</a>
-                            <a href="city-light.html">City Light</a>
-                            <a href="gobos.html">Proyector de Gobos</a>
-                            <a href="sky-tracker.html">Sky Tracker</a>
+                            <a href="luz-neon.html">Luz Neón</a>
                             <a href="luz-negra.html">Luz Negra UV</a>
+                            <a href="city-color.html">City Color</a>
+                            <a href="city-light.html">City Light</a>
+                            <a href="cascadas-led.html">Cascadas LED</a>
+                            <a href="seguidor-luz.html">Seguidor de Luz</a>
                         </nav>
                     </div>
                     <div class="footer-column">

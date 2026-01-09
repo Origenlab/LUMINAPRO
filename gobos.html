@@ -851,6 +851,17 @@
             border-color: var(--color-accent);
         }
 
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+
         .galeria-cta {
             text-align: center;
         }
@@ -1321,6 +1332,17 @@
             font-size: 2rem;
             color: var(--color-accent);
             opacity: 0.2;
+        }
+
+        .inspiracion-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .inspiracion-item:hover img {
+            transform: scale(1.05);
         }
 
         .inspiracion-cta {
@@ -2063,11 +2085,14 @@
                         <a href="cabezas-moviles.html">Cabezas Móviles</a>
                         <a href="laser.html">Iluminación Láser</a>
                         <a href="luces-arquitectonicas.html">Luces Arquitectónicas</a>
-                        <a href="gobos.html" class="active">Proyector de Gobos</a>
+                        <a href="proyector-gobos.html">Proyector de Gobos</a>
                         <a href="sky-tracker.html">Sky Tracker</a>
                         <a href="luz-neon.html">Luz Neón</a>
                         <a href="luz-negra.html">Luz Negra UV</a>
                         <a href="city-color.html">City Color</a>
+                        <a href="city-light.html">City Light</a>
+                        <a href="cascadas-led.html">Cascadas LED</a>
+                        <a href="seguidor-luz.html">Seguidor de Luz</a>
                         <div class="nav-dropdown-divider"></div>
                         <a href="servicios.html" class="dropdown-all">Ver Todos</a>
                     </div>
@@ -2154,11 +2179,7 @@
                 <div class="experiencia-grid">
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <!-- Reemplazar con: <img src="img/gobos/evento-corporativo-logo.jpg" alt="Evento corporativo con logo proyectado en pared" loading="lazy" width="600" height="400"> -->
-                            <div class="experiencia-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span>Logo corporativo proyectado en evento</span>
-                            </div>
+                            <img src="img/gobos/renta-gobos-logo-corporativo-piso-evento-empresarial.webp" alt="Evento corporativo con logo proyectado en pared" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Eventos Corporativos</h3>
@@ -2168,11 +2189,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <!-- Reemplazar con: <img src="img/gobos/boda-monograma.jpg" alt="Boda con monograma de novios proyectado" loading="lazy" width="600" height="400"> -->
-                            <div class="experiencia-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span>Monograma de novios en pista de baile</span>
-                            </div>
+                            <img src="img/gobos/renta-gobos-boda-monograma-pista-baile-novios.webp" alt="Boda con monograma de novios proyectado" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Bodas Elegantes</h3>
@@ -2182,11 +2199,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <!-- Reemplazar con: <img src="img/gobos/lanzamiento-producto.jpg" alt="Lanzamiento de producto con logo proyectado" loading="lazy" width="600" height="400"> -->
-                            <div class="experiencia-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span>Lanzamiento de producto con gobos</span>
-                            </div>
+                            <img src="img/gobos/gobos-proyeccion-logo-edificio-inauguracion-nocturna.webp" alt="Lanzamiento de producto con logo proyectado" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Lanzamientos y Premiaciones</h3>
@@ -2207,40 +2220,22 @@
 
                 <div class="galeria-grid">
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Logo corporativo proyectado en pared de evento</span>
-                        </div>
+                        <img src="img/gobos/renta-gobos-logo-corporativo-piso-evento-empresarial.webp" alt="Logo corporativo proyectado en pared de evento" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Monograma de novios en pista de baile</span>
-                        </div>
+                        <img src="img/gobos/renta-gobos-boda-monograma-pista-baile-novios.webp" alt="Monograma de novios en pista de baile" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Patrones decorativos en gala corporativa</span>
-                        </div>
+                        <img src="img/gobos/proyeccion-gobos-aniversario-empresa-gala-corporativa.webp" alt="Patrones decorativos en gala corporativa" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Logo de marca en lanzamiento de producto</span>
-                        </div>
+                        <img src="img/gobos/renta-gobos-logo-fachada-lanzamiento-marca.webp" alt="Logo de marca en lanzamiento de producto" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Gobo rotativo con patrones en fiesta</span>
-                        </div>
+                        <img src="img/gobos/gobos-xv-anos-nombre-pista-baile-quinceañera-rosa.webp" alt="Gobo rotativo con patrones en fiesta" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <div class="galeria-item-placeholder">
-                            <i class="fas fa-image" aria-hidden="true"></i>
-                            <span>Proyección en fachada de edificio</span>
-                        </div>
+                        <img src="img/gobos/gobos-proyeccion-logo-edificio-inauguracion-nocturna.webp" alt="Proyección en fachada de edificio" loading="lazy">
                     </div>
                 </div>
 
@@ -2262,9 +2257,7 @@
                     <!-- Tipo 1: Gobo de Metal -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-cog" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/gobos-boda-iniciales-pista-baile-velas-romantico.webp" alt="Gobo de Metal" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Gobo de Metal (Acero Inoxidable)</h3>
@@ -2285,9 +2278,7 @@
                     <!-- Tipo 2: Gobo de Vidrio B/N -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-adjust" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/gobos-iniciales-ornamentales-evento-corporativo.webp" alt="Gobo de Vidrio B/N" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Gobo de Vidrio Blanco y Negro</h3>
@@ -2308,9 +2299,7 @@
                     <!-- Tipo 3: Gobo de Vidrio a Color -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-palette" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/renta-gobos-logo-fachada-lanzamiento-marca.webp" alt="Gobo de Vidrio a Color" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Gobo de Vidrio a Todo Color</h3>
@@ -2331,9 +2320,7 @@
                     <!-- Tipo 4: Gobo Rotativo -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-sync-alt" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/renta-gobos-xv-anos-corona-quinceañera-elegante.webp" alt="Gobo Rotativo" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Gobo Rotativo (Efectos Dinámicos)</h3>
@@ -2354,9 +2341,7 @@
                     <!-- Tipo 5: Proyector LED de Alta Potencia -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <div class="tipo-img-placeholder">
-                                <i class="fas fa-sun" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/gobos-proyeccion-logo-edificio-inauguracion-nocturna.webp" alt="Proyector LED Alta Potencia" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Proyector LED Alta Potencia (100W+)</h3>
@@ -2388,10 +2373,7 @@
                 <div class="aplicaciones-grid">
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/corporativo-gobo.jpg" alt="Evento corporativo con logo proyectado" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/renta-gobos-logo-corporativo-piso-evento-empresarial.webp" alt="Evento corporativo con logo proyectado" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Eventos Corporativos</h3>
@@ -2401,10 +2383,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/boda-monograma.jpg" alt="Boda con monograma de novios proyectado" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/gobos-para-bodas-iniciales-proyectadas-primer-baile.webp" alt="Boda con monograma de novios proyectado" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Bodas Elegantes</h3>
@@ -2414,10 +2393,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/lanzamiento-gobo.jpg" alt="Lanzamiento de producto con gobos" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/renta-gobos-logo-fachada-lanzamiento-marca.webp" alt="Lanzamiento de producto con gobos" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Lanzamientos de Producto</h3>
@@ -2427,10 +2403,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/gala-gobo.jpg" alt="Gala y premiación con gobos decorativos" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/proyeccion-gobos-aniversario-empresa-gala-corporativa.webp" alt="Gala y premiación con gobos decorativos" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Galas y Premiaciones</h3>
@@ -2440,10 +2413,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/conferencia-gobo.jpg" alt="Conferencia con branding proyectado" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/proyeccion-logotipo-empresa-lobby-hotel-corporativo.webp" alt="Conferencia con branding proyectado" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Conferencias y Congresos</h3>
@@ -2453,10 +2423,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/fachada-gobo.jpg" alt="Fachada de edificio con logo proyectado" loading="lazy" width="600" height="360"> -->
-                            <div class="aplicacion-img-placeholder">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                            </div>
+                            <img src="img/gobos/gobos-proyeccion-logo-edificio-inauguracion-nocturna.webp" alt="Fachada de edificio con logo proyectado" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Fachadas y Exteriores</h3>
@@ -2722,28 +2689,28 @@
 
                 <div class="inspiracion-grid">
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/renta-gobos-boda-monograma-pista-baile-novios.webp" alt="Inspiración gobo boda monograma" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/gobos-para-bodas-iniciales-proyectadas-primer-baile.webp" alt="Inspiración gobo iniciales boda" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/proyeccion-nombres-novios-boda-hacienda-rustica.webp" alt="Inspiración gobo nombres hacienda" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/renta-gobos-xv-anos-corona-quinceañera-elegante.webp" alt="Inspiración gobo XV años" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/renta-gobos-logo-corporativo-piso-evento-empresarial.webp" alt="Inspiración gobo corporativo" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/proyeccion-logotipo-empresa-lobby-hotel-corporativo.webp" alt="Inspiración gobo logo lobby" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/gobos-proyeccion-logo-edificio-inauguracion-nocturna.webp" alt="Inspiración gobo edificio" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/gobos/renta-gobos-xv-anos-personalizado-vals-quinceañera.webp" alt="Inspiración gobo quinceañera" loading="lazy">
                     </div>
                 </div>
 
@@ -2859,11 +2826,14 @@
                         <li><a href="cabezas-moviles.html">Cabezas Móviles</a></li>
                         <li><a href="laser.html">Iluminación Láser</a></li>
                         <li><a href="luces-arquitectonicas.html">Luces Arquitectónicas</a></li>
-                        <li><a href="gobos.html">Proyector de Gobos</a></li>
+                        <li><a href="proyector-gobos.html">Proyector de Gobos</a></li>
                         <li><a href="sky-tracker.html">Sky Tracker</a></li>
                         <li><a href="luz-neon.html">Luz Neón</a></li>
                         <li><a href="luz-negra.html">Luz Negra UV</a></li>
                         <li><a href="city-color.html">City Color</a></li>
+                        <li><a href="city-light.html">City Light</a></li>
+                        <li><a href="cascadas-led.html">Cascadas LED</a></li>
+                        <li><a href="seguidor-luz.html">Seguidor de Luz</a></li>
                     </ul>
                 </div>
 

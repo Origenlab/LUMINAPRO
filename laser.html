@@ -851,6 +851,17 @@
             border-color: var(--color-accent);
         }
 
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+
         .galeria-cta {
             text-align: center;
         }
@@ -1321,6 +1332,17 @@
             font-size: 2rem;
             color: var(--color-accent);
             opacity: 0.2;
+        }
+
+        .inspiracion-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .inspiracion-item:hover img {
+            transform: scale(1.05);
         }
 
         .inspiracion-cta {
@@ -2061,13 +2083,16 @@
                     <div class="nav-dropdown-menu">
                         <a href="guirnaldas.html">Guirnaldas de Luz</a>
                         <a href="cabezas-moviles.html">Cabezas Móviles</a>
-                        <a href="laser.html" class="active">Iluminación Láser</a>
+                        <a href="laser.html">Iluminación Láser</a>
                         <a href="luces-arquitectonicas.html">Luces Arquitectónicas</a>
-                        <a href="gobos.html">Proyector de Gobos</a>
+                        <a href="proyector-gobos.html">Proyector de Gobos</a>
                         <a href="sky-tracker.html">Sky Tracker</a>
                         <a href="luz-neon.html">Luz Neón</a>
                         <a href="luz-negra.html">Luz Negra UV</a>
                         <a href="city-color.html">City Color</a>
+                        <a href="city-light.html">City Light</a>
+                        <a href="cascadas-led.html">Cascadas LED</a>
+                        <a href="seguidor-luz.html">Seguidor de Luz</a>
                         <div class="nav-dropdown-divider"></div>
                         <a href="servicios.html" class="dropdown-all">Ver Todos</a>
                     </div>
@@ -2154,7 +2179,7 @@
                 <div class="experiencia-grid">
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/show-laser-verde-concierto-multitud-festival.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/laser/laser-para-bodas-primer-baile-romantico-verde.webp" alt="Láser para bodas primer baile" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Bodas de Ensueño</h3>
@@ -2164,7 +2189,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/show-laser-verde-dj-fiesta-discoteca.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/laser/laser-gala-evento-pirotecnia-fria-colores.webp" alt="Láser para XV años y galas" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>XV Años Inolvidables</h3>
@@ -2174,7 +2199,7 @@
 
                     <article class="experiencia-card">
                         <div class="experiencia-img">
-                            <img src="img/index/concierto-cabezas-moviles-beam-humo-escenario.webp" alt="Experiencia de iluminación profesional" loading="lazy">
+                            <img src="img/laser/renta-laser-show-festival-concierto-multicolor.webp" alt="Láser para conciertos y festivales" loading="lazy">
                         </div>
                         <div class="experiencia-card-content">
                             <h3>Fiestas y Conciertos</h3>
@@ -2195,22 +2220,22 @@
 
                 <div class="galeria-grid">
                     <div class="galeria-item">
-                        <img src="img/index/show-laser-verde-concierto-multitud-festival.webp" alt="Galería de iluminación profesional" loading="lazy">
+                        <img src="img/laser/renta-laser-show-festival-concierto-multicolor.webp" alt="Show láser festival multicolor" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/show-laser-verde-dj-fiesta-discoteca.webp" alt="Galería de iluminación profesional" loading="lazy">
+                        <img src="img/laser/show-laser-profesional-evento-masivo-rgb.webp" alt="Show láser profesional RGB" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/show-laser-verde-concierto-multitud-festival.webp" alt="Show láser profesional" loading="lazy">
+                        <img src="img/laser/renta-laser-discoteca-club-nocturno-cyan-magenta.webp" alt="Láser discoteca club nocturno" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/show-laser-verde-dj-fiesta-discoteca.webp" alt="Show láser profesional" loading="lazy">
+                        <img src="img/laser/laser-para-bodas-primer-baile-romantico-verde.webp" alt="Láser para bodas primer baile" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/show-luces-concierto-truss-cabezas-moviles.webp" alt="Show láser profesional" loading="lazy">
+                        <img src="img/laser/renta-laser-verde-lanzamiento-producto-corporativo.webp" alt="Láser evento corporativo" loading="lazy">
                     </div>
                     <div class="galeria-item">
-                        <img src="img/index/dj-evento-social-setup-profesional-luces.webp" alt="Show láser profesional" loading="lazy">
+                        <img src="img/laser/show-laser-concierto-arena-espectaculo-luces.webp" alt="Show láser concierto arena" loading="lazy">
                     </div>
                 </div>
 
@@ -2232,7 +2257,7 @@
                     <!-- Tipo 1: Láser RGB Club -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <img src="img/index/show-laser-verde-concierto-multitud-festival.webp" alt="Tipo de láser" loading="lazy">
+                            <img src="img/laser/renta-laser-discoteca-club-nocturno-cyan-magenta.webp" alt="Láser RGB Club para fiestas" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Láser RGB Club (1W-3W)</h3>
@@ -2253,7 +2278,7 @@
                     <!-- Tipo 2: Láser RGB Profesional -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <img src="img/index/show-laser-verde-dj-fiesta-discoteca.webp" alt="Tipo de láser" loading="lazy">
+                            <img src="img/laser/renta-laser-fiesta-club-dj-cyan-magenta-humo.webp" alt="Láser RGB Profesional" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Láser RGB Profesional (3W-7W)</h3>
@@ -2274,7 +2299,7 @@
                     <!-- Tipo 3: Láser Alta Potencia -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <img src="img/index/dj-evento-social-setup-profesional-luces.webp" alt="Tipo de láser" loading="lazy">
+                            <img src="img/laser/show-laser-profesional-evento-masivo-rgb.webp" alt="Láser Alta Potencia" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Láser Alta Potencia (8W-15W+)</h3>
@@ -2295,7 +2320,7 @@
                     <!-- Tipo 4: Láser de Animación ILDA -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <img src="img/index/show-luces-concierto-truss-cabezas-moviles.webp" alt="Tipo de láser" loading="lazy">
+                            <img src="img/laser/laser-graficos-3d-figuras-geometricas-evento.webp" alt="Láser de Animación ILDA" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Láser de Animación ILDA</h3>
@@ -2316,7 +2341,7 @@
                     <!-- Tipo 5: Láser para Exteriores -->
                     <article class="tipo-card">
                         <div class="tipo-img">
-                            <img src="img/index/iluminacion-escenario-concierto-cabezas-moviles-profesional.webp" alt="Tipo de láser" loading="lazy">
+                            <img src="img/laser/renta-laser-festival-escenario-haces-multicolor.webp" alt="Láser para Exteriores Sky Laser" loading="lazy">
                         </div>
                         <div class="tipo-content">
                             <h3>Láser para Exteriores (Sky Laser)</h3>
@@ -2348,8 +2373,7 @@
                 <div class="aplicaciones-grid">
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/boda-laser.jpg" alt="Boda con túnel láser y efectos aéreos" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/boda-pista-baile-guirnaldas-dj-invitados.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/laser-para-bodas-primer-baile-romantico-verde.webp" alt="Boda con túnel láser y efectos aéreos" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Bodas Memorables</h3>
@@ -2359,8 +2383,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/xv-laser.jpg" alt="XV años con show de láser espectacular" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/gala-corporativa-escenario-pantallas-led-iluminacion.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/renta-laser-boda-salon-primer-baile-novios.webp" alt="XV años con show de láser espectacular" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>XV Años Espectaculares</h3>
@@ -2370,8 +2393,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/concierto-laser.jpg" alt="Concierto con show de láser profesional" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/letrero-neon-personalizado-quinceanos-mesa-dulces.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/renta-laser-show-festival-concierto-multicolor.webp" alt="Concierto con show de láser profesional" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Conciertos y Festivales</h3>
@@ -2381,8 +2403,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/corporativo-laser.jpg" alt="Evento corporativo con logo en láser" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/show-luces-concierto-truss-cabezas-moviles.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/renta-laser-verde-lanzamiento-producto-corporativo.webp" alt="Evento corporativo con logo en láser" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Eventos Corporativos</h3>
@@ -2392,8 +2413,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/fiesta-electronica-laser.jpg" alt="Fiesta electrónica con láser RGB" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/dj-evento-social-setup-profesional-luces.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/renta-laser-antro-dj-bola-espejos-fiesta.webp" alt="Fiesta electrónica con láser RGB" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Fiestas Electrónicas</h3>
@@ -2403,8 +2423,7 @@
 
                     <article class="aplicacion-card">
                         <div class="aplicacion-img">
-                            <!-- Reemplazar con: <img src="img/aplicaciones/exterior-laser.jpg" alt="Evento exterior con láser sky" loading="lazy" width="600" height="360"> -->
-                            <img src="img/index/evento-corporativo-escenario-cabezas-moviles-pantallas.webp" alt="Aplicación de show láser" loading="lazy">
+                            <img src="img/laser/laser-rgb-concierto-masivo-truss-profesional.webp" alt="Evento exterior con láser sky" loading="lazy">
                         </div>
                         <div class="aplicacion-content">
                             <h3>Eventos al Aire Libre</h3>
@@ -2670,28 +2689,28 @@
 
                 <div class="inspiracion-grid">
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/renta-laser-show-festival-concierto-multicolor.webp" alt="Inspiración show láser festival" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/show-laser-profesional-evento-masivo-rgb.webp" alt="Inspiración láser profesional RGB" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/laser-para-bodas-primer-baile-romantico-verde.webp" alt="Inspiración láser bodas" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/renta-laser-discoteca-club-nocturno-cyan-magenta.webp" alt="Inspiración láser discoteca" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/laser-gala-evento-pirotecnia-fria-colores.webp" alt="Inspiración láser gala pirotecnia" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/renta-laser-show-pirotecnia-fria-confeti.webp" alt="Inspiración láser show pirotecnia" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/laser-graficos-3d-figuras-geometricas-evento.webp" alt="Inspiración láser gráficos 3D" loading="lazy">
                     </div>
                     <div class="inspiracion-item">
-                        <i class="fas fa-image" aria-hidden="true"></i>
+                        <img src="img/laser/laser-discoteca-pista-baile-efectos-neon.webp" alt="Inspiración láser pista de baile" loading="lazy">
                     </div>
                 </div>
 
@@ -2807,11 +2826,14 @@
                         <li><a href="cabezas-moviles.html">Cabezas Móviles</a></li>
                         <li><a href="laser.html">Iluminación Láser</a></li>
                         <li><a href="luces-arquitectonicas.html">Luces Arquitectónicas</a></li>
-                        <li><a href="gobos.html">Proyector de Gobos</a></li>
+                        <li><a href="proyector-gobos.html">Proyector de Gobos</a></li>
                         <li><a href="sky-tracker.html">Sky Tracker</a></li>
                         <li><a href="luz-neon.html">Luz Neón</a></li>
                         <li><a href="luz-negra.html">Luz Negra UV</a></li>
                         <li><a href="city-color.html">City Color</a></li>
+                        <li><a href="city-light.html">City Light</a></li>
+                        <li><a href="cascadas-led.html">Cascadas LED</a></li>
+                        <li><a href="seguidor-luz.html">Seguidor de Luz</a></li>
                     </ul>
                 </div>
 
