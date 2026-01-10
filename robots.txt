@@ -1,5 +1,30 @@
-# https://www.robotstxt.org/
+# Robots.txt para LUMINAPRO
+# https://luminapro.mx
 
-# Allow crawling of all content
+# Permitir todos los robots
 User-agent: *
-Disallow:
+Allow: /
+
+# Bloquear archivos de sistema
+Disallow: /*.json$
+Disallow: /browserconfig.xml
+
+# Permitir sitemap
+Allow: /sitemap.xml
+
+# Ubicación del Sitemap
+Sitemap: https://luminapro.mx/sitemap.xml
+
+# Directivas específicas para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Directivas específicas para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Directivas para Google Images
+User-agent: Googlebot-Image
+Allow: /img/
