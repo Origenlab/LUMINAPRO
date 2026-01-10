@@ -1614,27 +1614,27 @@
             });
         });
 
-        // Header scroll effect
+        // Header scroll effect y TOC - Optimizado con throttle
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
+        const sections = document.querySelectorAll('.policy-block');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+        let scrollTicking = false;
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            // Header effect
+            if (scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
 
-        // Active TOC link on scroll
-        const sections = document.querySelectorAll('.policy-block');
-        const tocLinks = document.querySelectorAll('.toc-list a');
-
-        window.addEventListener('scroll', () => {
+            // Active TOC link
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 200) {
+                if (scrollY >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1645,7 +1645,16 @@
                     link.classList.add('active');
                 }
             });
-        });
+
+            scrollTicking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(handleScroll);
+                scrollTicking = true;
+            }
+        }, { passive: true });
 
         // Smooth scroll for TOC links
         tocLinks.forEach(link => {

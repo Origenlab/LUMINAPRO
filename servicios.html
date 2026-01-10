@@ -3541,10 +3541,11 @@
             });
         });
 
-        // Servicios Navigation - Scroll spy
+        // Servicios Navigation - Scroll spy (Optimizado con throttle)
         const servicioSections = document.querySelectorAll('.servicio-section');
+        let scrollTicking = false;
 
-        window.addEventListener('scroll', () => {
+        const updateScrollSpy = () => {
             let current = '';
             const scrollPosition = window.pageYOffset + 200;
 
@@ -3563,7 +3564,15 @@
                     item.classList.add('active');
                 }
             });
-        });
+            scrollTicking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(updateScrollSpy);
+                scrollTicking = true;
+            }
+        }, { passive: true });
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
