@@ -133,6 +133,49 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Blog -->
+    <url>
+        <loc>https://luminapro.mx/blog.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://luminapro.mx/blog/iluminacion-perfecta-boda.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luminapro.mx/blog/tendencias-iluminacion-2024.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luminapro.mx/blog/guirnaldas-eventos-exterior.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luminapro.mx/blog/luz-neon-fiestas-eventos.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luminapro.mx/blog/luz-negra-fiestas-glow-party.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Páginas Legales -->
     <url>
         <loc>https://luminapro.mx/politicas.html</loc>
