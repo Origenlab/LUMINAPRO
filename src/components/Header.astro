@@ -1,0 +1,217 @@
+---
+const services = [
+  { name: 'Guirnaldas de Luz', href: '/guirnaldas' },
+  { name: 'Cabezas Móviles', href: '/cabezas-moviles' },
+  { name: 'Iluminación Láser', href: '/laser' },
+  { name: 'Luces Arquitectónicas', href: '/luces-arquitectonicas' },
+  { name: 'Proyector de Gobos', href: '/gobos' },
+  { name: 'Sky Tracker', href: '/sky-tracker' },
+  { name: 'Luz Neón', href: '/luz-neon' },
+  { name: 'Luz Negra UV', href: '/luz-negra' },
+  { name: 'City Color', href: '/city-color' },
+  { name: 'City Light', href: '/city-light' },
+  { name: 'Cascadas LED', href: '/cascadas-led' },
+  { name: 'Seguidor de Luz', href: '/seguidor-luz' },
+];
+---
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="/" class="logo" aria-label="LUMINAPRO - Inicio">LUMINA<span>PRO</span></a>
+    <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+      <div class="nav-dropdown">
+        <a href="/servicios" class="nav-link nav-dropdown-toggle">
+          Servicios <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </a>
+        <div class="nav-dropdown-menu">
+          {services.map((s) => (
+            <a href={s.href}>{s.name}</a>
+          ))}
+          <div class="nav-dropdown-divider"></div>
+          <a href="/servicios" class="dropdown-all">Ver Todos</a>
+        </div>
+      </div>
+      <a href="/nosotros" class="nav-link">Nosotros</a>
+      <a href="/contacto" class="nav-link">Contacto</a>
+      <a href="/contacto" class="btn btn-primary btn-small nav-cta">Cotiza tu Evento</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.5rem 0;
+  }
+  .header.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--color-accent); }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .nav-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    position: relative;
+  }
+  .nav-link:hover { color: var(--color-accent); }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+  .nav-dropdown-toggle i {
+    font-size: 0.6rem;
+    opacity: 0.7;
+  }
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 220px;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 168, 75, 0.15);
+    border-radius: 16px;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: rgba(18, 18, 18, 0.98);
+    border-left: 1px solid rgba(212, 168, 75, 0.15);
+    border-top: 1px solid rgba(212, 168, 75, 0.15);
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 10px;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(212, 168, 75, 0.1);
+    color: var(--color-text-light);
+  }
+  .nav-dropdown-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.2), transparent);
+    margin: 0.5rem 0.75rem;
+  }
+  .nav-dropdown-menu .dropdown-all {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(212, 168, 75, 0.2);
+    margin-top: 0.25rem;
+  }
+  .nav-dropdown-menu .dropdown-all:hover {
+    background: rgba(212, 168, 75, 0.15);
+    border-color: rgba(212, 168, 75, 0.3);
+  }
+  .nav-cta { margin-left: 1rem; }
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    background: none;
+    border: none;
+  }
+  .mobile-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text-light);
+  }
+  @media (max-width: 768px) {
+    .mobile-toggle { display: flex; }
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 350px;
+      height: 100vh;
+      background-color: var(--color-bg-secondary);
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .nav-menu.active { right: 0; }
+    .nav-dropdown-menu {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      background: rgba(255,255,255,0.05);
+      box-shadow: none;
+      min-width: 100%;
+    }
+    .nav-dropdown-menu::before { display: none; }
+    .nav-cta { margin-left: 0; margin-top: 1rem; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  const toggle = document.getElementById('mobileToggle');
+  const nav = document.getElementById('navMenu');
+
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('active');
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+  });
+</script>

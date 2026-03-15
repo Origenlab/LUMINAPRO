@@ -1,0 +1,222 @@
+---
+const services = [
+  { name: 'Guirnaldas de Luz', href: '/guirnaldas' },
+  { name: 'Cabezas Móviles', href: '/cabezas-moviles' },
+  { name: 'Iluminación Láser', href: '/laser' },
+  { name: 'Luces Arquitectónicas', href: '/luces-arquitectonicas' },
+  { name: 'Proyector de Gobos', href: '/gobos' },
+  { name: 'Sky Tracker', href: '/sky-tracker' },
+  { name: 'Luz Neón', href: '/luz-neon' },
+  { name: 'Luz Negra UV', href: '/luz-negra' },
+  { name: 'City Color', href: '/city-color' },
+  { name: 'City Light', href: '/city-light' },
+  { name: 'Cascadas LED', href: '/cascadas-led' },
+  { name: 'Seguidor de Luz', href: '/seguidor-luz' },
+];
+
+const empresa = [
+  { name: 'Todos los Servicios', href: '/servicios' },
+  { name: 'Nosotros', href: '/nosotros' },
+  { name: 'Contacto', href: '/contacto' },
+  { name: 'Aviso de Privacidad', href: '/politicas' },
+];
+---
+
+<footer class="footer">
+  <div class="footer-cta">
+    <div class="container">
+      <h3>¿Listo para transformar tu evento?</h3>
+      <p>Cotiza sin compromiso y recibe una propuesta personalizada en menos de 24 horas</p>
+      <a href="https://wa.me/5527221736?text=Hola%20LUMINAPRO,%20me%20interesa%20cotizar%20iluminación%20para%20mi%20evento" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Cotización
+      </a>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">LUMINA<span>PRO</span></a>
+          <p>Somos líderes en renta de iluminación profesional para eventos en México. Con más de 20 años de experiencia, transformamos espacios ordinarios en escenarios extraordinarios.</p>
+          <div class="footer-badges">
+            <span class="footer-badge"><i class="fas fa-award" aria-hidden="true"></i> +20 Años de Experiencia</span>
+            <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> +3,000 Eventos</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            {services.map((s) => (
+              <li><a href={s.href}>{s.name}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            {empresa.map((e) => (
+              <li><a href={e.href}>{e.name}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Prolongación Paseo de la Reforma 1015, Col. Santa Fe, CDMX, 01376</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:5527221736">55 2722 1736</a></p>
+            <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/5527221736" target="_blank" rel="noopener noreferrer">55 2722 1736</a></p>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Lun - Sáb: 9:00 - 19:00</p>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/luminapro.mx" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; LUMINAPRO. Todos los derechos reservados.</p>
+      <p class="footer-tagline">Iluminación Profesional para Eventos en CDMX y Estado de México</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-cta {
+    background: linear-gradient(135deg, var(--color-accent), #c49a3d);
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .footer-cta h3 {
+    color: var(--color-bg-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 1rem;
+  }
+  .footer-cta p {
+    color: rgba(10, 10, 10, 0.7);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+  .footer-main {
+    background-color: var(--color-bg-secondary);
+    padding: 5rem 0 3rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+  }
+  .footer-brand .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .footer-brand .logo span { color: var(--color-accent); }
+  .footer-brand > p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(212, 168, 75, 0.1);
+    border: 1px solid rgba(212, 168, 75, 0.2);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+  .footer-col ul li {
+    margin-bottom: 0.75rem;
+  }
+  .footer-col ul li a {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  .footer-col ul li a:hover { color: var(--color-accent); }
+  .footer-contact p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .footer-contact p i {
+    color: var(--color-accent);
+    margin-top: 0.2rem;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .footer-contact a { color: var(--color-text-muted); }
+  .footer-contact a:hover { color: var(--color-accent); }
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+  .footer-social a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+  }
+  .footer-bottom {
+    background-color: var(--color-bg-primary);
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .footer-bottom p {
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    margin-bottom: 0.25rem;
+  }
+  .footer-tagline { font-size: 0.75rem !important; opacity: 0.6; }
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

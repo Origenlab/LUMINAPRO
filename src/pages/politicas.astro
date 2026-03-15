@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  { id: 'responsable', title: 'Responsable del Tratamiento' },
+  { id: 'datos', title: 'Datos Personales Recabados' },
+  { id: 'finalidades', title: 'Finalidades del Tratamiento' },
+  { id: 'transferencias', title: 'Transferencias de Datos' },
+  { id: 'arco', title: 'Derechos ARCO' },
+  { id: 'cookies', title: 'Uso de Cookies' },
+  { id: 'terminos', title: 'Términos de Servicio' },
+  { id: 'cambios', title: 'Cambios al Aviso' },
+  { id: 'contacto-priv', title: 'Contacto' },
+];
+---
+
+<Layout
+  title="Aviso de Privacidad | LUMINAPRO - Políticas y Términos"
+  description="Aviso de privacidad y políticas de LUMINAPRO. Conoce cómo protegemos tus datos personales, términos de servicio y condiciones de renta de iluminación profesional."
+  canonical="/politicas"
+>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Aviso de Privacidad</h1>
+      <p class="page-hero-subtitle">En LUMINAPRO nos comprometemos a proteger tu información personal. Conoce cómo recopilamos, utilizamos y protegemos tus datos.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section class="privacy-content">
+    <div class="container">
+      <div class="privacy-layout">
+        <!-- TOC -->
+        <aside class="privacy-toc">
+          <h3>Contenido</h3>
+          <nav>
+            <ul>
+              {sections.map((s) => (
+                <li><a href={`#${s.id}`}>{s.title}</a></li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="privacy-main">
+          <section id="responsable" class="policy-block">
+            <h2><i class="fas fa-building" aria-hidden="true"></i> Responsable del Tratamiento</h2>
+            <p><strong>LUMINAPRO</strong>, con domicilio en Prolongación Paseo de la Reforma 1015, Col. Santa Fe, Ciudad de México, C.P. 01376, es responsable del tratamiento de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+          </section>
+
+          <section id="datos" class="policy-block">
+            <h2><i class="fas fa-database" aria-hidden="true"></i> Datos Personales Recabados</h2>
+            <h3>Datos de Identificación</h3>
+            <ul>
+              <li>Nombre completo</li>
+              <li>Número de teléfono</li>
+              <li>Correo electrónico</li>
+              <li>Dirección del evento</li>
+            </ul>
+            <h3>Datos del Evento</h3>
+            <ul>
+              <li>Tipo de evento</li>
+              <li>Fecha y horario</li>
+              <li>Ubicación/venue</li>
+              <li>Número de invitados</li>
+              <li>Servicios requeridos</li>
+            </ul>
+            <h3>Datos de Facturación</h3>
+            <ul>
+              <li>Razón social</li>
+              <li>RFC</li>
+              <li>Domicilio fiscal</li>
+              <li>Régimen fiscal</li>
+            </ul>
+          </section>
+
+          <section id="finalidades" class="policy-block">
+            <h2><i class="fas fa-bullseye" aria-hidden="true"></i> Finalidades del Tratamiento</h2>
+            <h3>Finalidades Primarias (Necesarias)</h3>
+            <ul>
+              <li>Elaborar cotizaciones personalizadas</li>
+              <li>Prestar los servicios de iluminación contratados</li>
+              <li>Emitir comprobantes fiscales</li>
+              <li>Coordinar la logística de instalación y operación</li>
+              <li>Dar seguimiento a su evento</li>
+              <li>Atender solicitudes de información y soporte</li>
+            </ul>
+            <h3>Finalidades Secundarias (Opcionales)</h3>
+            <ul>
+              <li>Enviar promociones y ofertas especiales</li>
+              <li>Realizar encuestas de satisfacción</li>
+              <li>Enviar información sobre nuevos servicios</li>
+              <li>Compartir contenido relevante del sector</li>
+            </ul>
+            <div class="info-box">
+              <p>Si no desea que sus datos sean tratados para finalidades secundarias, puede enviar un correo a <a href="mailto:privacidad@luminapro.mx">privacidad@luminapro.mx</a></p>
+            </div>
+          </section>
+
+          <section id="transferencias" class="policy-block">
+            <h2><i class="fas fa-exchange-alt" aria-hidden="true"></i> Transferencias de Datos</h2>
+            <p>Sus datos personales podrán ser transferidos a:</p>
+            <ul>
+              <li><strong>Proveedores de servicios:</strong> que nos asisten en la prestación del servicio contratado</li>
+              <li><strong>Autoridades competentes:</strong> cuando sea requerido por ley</li>
+              <li><strong>Instituciones financieras:</strong> para el procesamiento de pagos</li>
+            </ul>
+          </section>
+
+          <section id="arco" class="policy-block">
+            <h2><i class="fas fa-user-shield" aria-hidden="true"></i> Derechos ARCO</h2>
+            <p>Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (Derechos ARCO).</p>
+            <h3>Procedimiento</h3>
+            <p>Para ejercer sus derechos ARCO, envíe su solicitud a <a href="mailto:privacidad@luminapro.mx">privacidad@luminapro.mx</a> incluyendo:</p>
+            <ul>
+              <li>Nombre completo del titular</li>
+              <li>Domicilio o correo electrónico para recibir respuesta</li>
+              <li>Documentos que acrediten identidad</li>
+              <li>Descripción clara y precisa de los datos respecto a los que se busca ejercer algún derecho</li>
+            </ul>
+            <div class="info-box">
+              <p>Tiempo de respuesta: <strong>20 días hábiles</strong> a partir de la recepción de la solicitud.</p>
+            </div>
+          </section>
+
+          <section id="cookies" class="policy-block">
+            <h2><i class="fas fa-cookie-bite" aria-hidden="true"></i> Uso de Cookies y Tecnologías de Rastreo</h2>
+            <p>Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación.</p>
+            <h3>Tipos de Cookies</h3>
+            <ul>
+              <li><strong>Esenciales:</strong> necesarias para el funcionamiento del sitio</li>
+              <li><strong>De rendimiento:</strong> nos ayudan a entender cómo interactúa con el sitio</li>
+              <li><strong>Funcionales:</strong> recuerdan sus preferencias para mejorar la experiencia</li>
+            </ul>
+          </section>
+
+          <section id="terminos" class="policy-block">
+            <h2><i class="fas fa-file-contract" aria-hidden="true"></i> Términos y Condiciones del Servicio</h2>
+            <h3>Reservaciones</h3>
+            <ul>
+              <li>Las reservaciones se confirman con un anticipo del 50%</li>
+              <li>El saldo restante debe liquidarse antes del evento</li>
+              <li>Las fechas quedan confirmadas únicamente al recibir el anticipo</li>
+            </ul>
+            <h3>Cancelaciones</h3>
+            <ul>
+              <li>Cancelación con más de 30 días: reembolso del 80% del anticipo</li>
+              <li>Cancelación entre 15 y 30 días: reembolso del 50% del anticipo</li>
+              <li>Cancelación con menos de 15 días: no se realiza reembolso</li>
+              <li>Reagendamiento sin costo sujeto a disponibilidad</li>
+            </ul>
+            <h3>Responsabilidades</h3>
+            <ul>
+              <li>LUMINAPRO se responsabiliza del correcto funcionamiento de los equipos</li>
+              <li>El cliente se responsabiliza de proporcionar acceso adecuado al venue</li>
+              <li>Daños causados por terceros al equipo serán responsabilidad del cliente</li>
+              <li>LUMINAPRO no se hace responsable de cancelaciones por fuerza mayor</li>
+            </ul>
+            <h3>Garantía</h3>
+            <ul>
+              <li>Equipos de respaldo disponibles para cada evento</li>
+              <li>Técnico presente durante toda la duración del servicio</li>
+              <li>Garantía de satisfacción: si no cumplimos expectativas, lo resolvemos</li>
+            </ul>
+          </section>
+
+          <section id="cambios" class="policy-block">
+            <h2><i class="fas fa-sync-alt" aria-hidden="true"></i> Cambios al Aviso de Privacidad</h2>
+            <p>LUMINAPRO se reserva el derecho de modificar el presente aviso de privacidad. Cualquier cambio será publicado en esta página y, en caso de cambios significativos, se lo notificaremos por los medios de contacto que nos haya proporcionado.</p>
+          </section>
+
+          <section id="contacto-priv" class="policy-block">
+            <h2><i class="fas fa-envelope" aria-hidden="true"></i> Contacto para Asuntos de Privacidad</h2>
+            <div class="contact-privacy">
+              <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:privacidad@luminapro.mx">privacidad@luminapro.mx</a></p>
+              <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:5527221736">55 2722 1736</a></p>
+              <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/5527221736" target="_blank" rel="noopener noreferrer">55 2722 1736</a></p>
+              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Prol. Paseo de la Reforma 1015, Santa Fe, CDMX</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    text-align: center;
+  }
+  .page-hero h1 { margin-bottom: 1.5rem; }
+  .page-hero-subtitle { font-size: 1.25rem; color: var(--color-text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+  .privacy-content { padding: 80px 0 120px; background: var(--color-bg-primary); }
+  .privacy-layout { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+  .privacy-toc {
+    position: sticky;
+    top: 100px;
+    background: var(--color-bg-secondary);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .privacy-toc h3 { font-size: 1rem; margin-bottom: 1rem; color: var(--color-accent); }
+  .privacy-toc ul li { margin-bottom: 0.75rem; }
+  .privacy-toc ul li a { color: var(--color-text-muted); font-size: 0.875rem; }
+  .privacy-toc ul li a:hover { color: var(--color-accent); }
+  .policy-block {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .policy-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .policy-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .policy-block h2 i { color: var(--color-accent); font-size: 1.25rem; }
+  .policy-block h3 { font-size: 1.125rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--color-accent); }
+  .policy-block p { color: var(--color-text-muted); line-height: 1.8; }
+  .policy-block ul { margin: 0.75rem 0 1rem 1.5rem; list-style: disc; }
+  .policy-block ul li { color: var(--color-text-muted); line-height: 1.8; margin-bottom: 0.5rem; }
+  .policy-block a { color: var(--color-accent); }
+  .policy-block a:hover { text-decoration: underline; }
+  .info-box {
+    background: rgba(212,168,75,0.08);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1rem;
+  }
+  .info-box p { margin-bottom: 0; }
+  .contact-privacy p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-muted);
+  }
+  .contact-privacy i { color: var(--color-accent); width: 20px; text-align: center; }
+  @media (max-width: 1024px) {
+    .privacy-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .privacy-toc { position: static; }
+  }
+</style>

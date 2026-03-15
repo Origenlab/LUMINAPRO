@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const contactSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contacto - LUMINAPRO",
+  "description": "Página de contacto de LUMINAPRO para cotizar iluminación profesional para eventos",
+  "url": "https://renta-de-iluminacion.com/contacto",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://renta-de-iluminacion.com/#organization",
+    "name": "LUMINAPRO",
+    "telephone": "+52-55-2722-1736",
+    "email": "info@luminapro.mx",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Prolongación Paseo de la Reforma 1015",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "01376",
+      "addressCountry": "MX"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+52-55-2722-1736",
+      "contactType": "sales",
+      "availableLanguage": ["Spanish"]
+    }
+  }
+});
+
+const horarios = [
+  { dia: 'Lunes', h: '9:00 - 19:00' },
+  { dia: 'Martes', h: '9:00 - 19:00' },
+  { dia: 'Miércoles', h: '9:00 - 19:00' },
+  { dia: 'Jueves', h: '9:00 - 19:00' },
+  { dia: 'Viernes', h: '9:00 - 19:00' },
+  { dia: 'Sábado', h: '9:00 - 19:00' },
+  { dia: 'Domingo', h: 'Cerrado' },
+];
+
+const faqs = [
+  { q: '¿Cuánto tiempo antes debo reservar?', a: 'Recomendamos reservar con al menos 2-4 semanas de anticipación para garantizar disponibilidad de equipos. En temporada alta (noviembre-febrero), sugerimos reservar con 1-2 meses de anticipación.' },
+  { q: '¿Incluyen instalación y operación?', a: 'Sí, todos nuestros servicios incluyen transporte, instalación, operación técnica durante el evento y desmontaje. Un técnico certificado estará presente en todo momento.' },
+  { q: '¿Trabajan fuera de CDMX?', a: 'Sí, cubrimos CDMX, Estado de México y eventos nacionales. Para ubicaciones fuera del área metropolitana, aplicamos un cargo adicional por traslado.' },
+  { q: '¿Cómo funciona la cotización?', a: 'Cuéntanos sobre tu evento (tipo, fecha, ubicación, número de invitados) y en menos de 24 horas recibirás una propuesta personalizada detallada sin compromiso.' },
+  { q: '¿Qué formas de pago aceptan?', a: 'Aceptamos efectivo, tarjeta de crédito/débito, transferencia bancaria y depósito. Ofrecemos facilidades de pago y facturación.' },
+  { q: '¿Tienen equipos de respaldo?', a: 'Absolutamente. Llevamos equipos de respaldo a cada evento. Nuestra política de redundancia garantiza que tu evento nunca se quede sin iluminación.' },
+];
+---
+
+<Layout
+  title="Contacto | LUMINAPRO - Cotiza Iluminación Eventos CDMX"
+  description="Contacta a LUMINAPRO para cotizar iluminación profesional para tu evento. Respuesta en menos de 24 horas. WhatsApp: 55 2722 1736. Bodas, XV años, eventos corporativos en CDMX."
+  canonical="/contacto"
+  ogTitle="Contacto | LUMINAPRO - Cotiza tu Evento Ahora"
+  schemas={[contactSchema]}
+>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Hagamos Brillar tu Evento</h1>
+      <p class="page-hero-subtitle">Estamos listos para transformar tu visión en realidad. Cuéntanos sobre tu evento y recibe una cotización personalizada en menos de 24 horas.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO PRINCIPAL -->
+  <section class="contacto-main">
+    <div class="container">
+      <div class="contacto-grid">
+        <!-- INFO -->
+        <div class="contacto-info">
+          <h2>Información de Contacto</h2>
+
+          <div class="contact-cards">
+            <a href="https://wa.me/5527221736" class="contact-card" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+              <div><h3>WhatsApp</h3><p>55 2722 1736</p></div>
+            </a>
+            <a href="tel:5527221736" class="contact-card">
+              <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+              <div><h3>Teléfono</h3><p>55 2722 1736</p></div>
+            </a>
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+              <div><h3>Ubicación</h3><p>Prolongación Paseo de la Reforma 1015, Col. Santa Fe, CDMX, 01376</p></div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></div>
+              <div><h3>Cobertura</h3><p>CDMX, Estado de México y eventos nacionales</p></div>
+            </div>
+          </div>
+
+          <div class="horarios">
+            <h3><i class="fas fa-clock" aria-hidden="true"></i> Horario de Atención</h3>
+            <div class="horarios-grid">
+              {horarios.map((h) => (
+                <div class="horario-item">
+                  <span class="horario-dia">{h.dia}</span>
+                  <span class={`horario-hora ${h.h === 'Cerrado' ? 'cerrado' : ''}`}>{h.h}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/luminapro.mx" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@luminapro_mx" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="contacto-form">
+          <h2>Solicita tu Cotización</h2>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tipoEvento">Tipo de Evento *</label>
+                <select id="tipoEvento" name="tipoEvento" required>
+                  <option value="">Selecciona...</option>
+                  <option value="Boda">Boda</option>
+                  <option value="XV Años">XV Años</option>
+                  <option value="Evento Corporativo">Evento Corporativo</option>
+                  <option value="Fiesta Privada">Fiesta Privada</option>
+                  <option value="Concierto/Festival">Concierto/Festival</option>
+                  <option value="Graduación">Graduación</option>
+                  <option value="Baby Shower">Baby Shower</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fechaEvento">Fecha del Evento *</label>
+                <input type="date" id="fechaEvento" name="fechaEvento" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="invitados">Número de Invitados</label>
+                <select id="invitados" name="invitados">
+                  <option value="">Selecciona...</option>
+                  <option value="Menos de 50">Menos de 50</option>
+                  <option value="50-100">50 - 100</option>
+                  <option value="100-200">100 - 200</option>
+                  <option value="200-500">200 - 500</option>
+                  <option value="Más de 500">Más de 500</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ubicacion">Ubicación del Evento</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Nombre del venue o dirección">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Cuéntanos más sobre tu evento</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Describe tu evento, servicios que te interesan, ideas especiales..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp form-submit">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar por WhatsApp
+            </button>
+            <p class="form-note"><i class="fas fa-shield-alt" aria-hidden="true"></i> Tu información está segura. Respuesta garantizada en menos de 24 horas.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Resolvemos tus Dudas</h2>
+      <div class="faq-grid">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Tu Evento Merece Brillar</h2>
+      <p>No dejes la iluminación al azar. Contáctanos ahora y descubre por qué más de 3,000 clientes nos han elegido para sus momentos más importantes.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5527221736?text=Hola%20LUMINAPRO,%20me%20interesa%20cotizar%20iluminación%20para%20mi%20evento" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
+        </a>
+        <a href="/servicios" class="btn btn-outline">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    text-align: center;
+  }
+  .page-hero h1 { margin-bottom: 1.5rem; }
+  .page-hero-subtitle { font-size: 1.25rem; color: var(--color-text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+  .contacto-main { padding: 80px 0 120px; background-color: var(--color-bg-primary); }
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contacto-info h2 { text-align: left; margin-bottom: 2rem; }
+  .contact-cards { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--color-bg-secondary);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .contact-icon {
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(212,168,75,0.15);
+    border-radius: 12px; flex-shrink: 0;
+  }
+  .contact-icon i { color: var(--color-accent); font-size: 1.25rem; }
+  .contact-icon.whatsapp { background: rgba(37,211,102,0.15); }
+  .contact-icon.whatsapp i { color: var(--color-whatsapp); }
+  .contact-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+  .contact-card p { color: var(--color-text-muted); margin-bottom: 0; font-size: 0.9375rem; }
+  .horarios { background: var(--color-bg-secondary); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+  .horarios h3 { font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .horarios h3 i { color: var(--color-accent); }
+  .horarios-grid { display: flex; flex-direction: column; gap: 0.5rem; }
+  .horario-item { display: flex; justify-content: space-between; font-size: 0.875rem; }
+  .horario-dia { color: var(--color-text-light); }
+  .horario-hora { color: var(--color-text-muted); }
+  .horario-hora.cerrado { color: #ef4444; }
+  .social-links { display: flex; gap: 1rem; }
+  .social-links a {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--color-bg-secondary);
+    border-radius: 50%; color: var(--color-text-muted); font-size: 1.125rem;
+  }
+  .social-links a:hover { background: var(--color-accent); color: var(--color-bg-primary); }
+  .contacto-form {
+    background: var(--color-bg-secondary);
+    border-radius: 16px;
+    padding: 3rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .contacto-form h2 { text-align: left; margin-bottom: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9375rem; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; padding: 0.875rem 1rem;
+    background-color: var(--color-bg-primary);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--color-text-light);
+    font-family: var(--font-body); font-size: 1rem;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { outline: none; border-color: var(--color-accent); }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-group select { appearance: auto; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--color-text-muted); }
+  .form-submit { width: 100%; margin-top: 0.5rem; }
+  .form-note { text-align: center; margin-top: 1rem; font-size: 0.8125rem; color: var(--color-text-muted); }
+  .form-note i { margin-right: 0.25rem; }
+  .faq-section { padding: 100px 0; background: var(--color-bg-secondary); }
+  .faq-grid { max-width: 800px; margin: 2rem auto 0; }
+  .faq-item {
+    background: var(--color-bg-primary);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; color: var(--color-accent); font-size: 1.5rem; font-weight: 300; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.5rem 1.25rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 0; }
+  .cta-final { padding: 100px 0; background: var(--color-bg-primary); text-align: center; }
+  .cta-final h2 { margin-bottom: 1rem; }
+  .cta-final > .container > p { color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  @media (max-width: 1024px) {
+    .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+    .contacto-form { padding: 2rem; }
+  }
+</style>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const get = (id: string) => (form.querySelector(`#${id}`) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)?.value || '';
+    const text = `Hola LUMINAPRO, soy ${get('nombre')}.\nTel: ${get('telefono')}\nEvento: ${get('tipoEvento')}\nFecha: ${get('fechaEvento')}\nInvitados: ${get('invitados')}\nUbicación: ${get('ubicacion')}\n\n${get('mensaje')}`;
+    window.open(`https://wa.me/5527221736?text=${encodeURIComponent(text)}`, '_blank');
+  });
+</script>

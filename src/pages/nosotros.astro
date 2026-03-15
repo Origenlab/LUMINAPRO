@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const orgSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://renta-de-iluminacion.com/#organization",
+  "name": "LUMINAPRO",
+  "alternateName": "LUMINAPRO Iluminación Profesional",
+  "description": "Empresa líder en renta de iluminación profesional para eventos en Ciudad de México. Más de 20 años de experiencia.",
+  "url": "https://renta-de-iluminacion.com",
+  "logo": { "@type": "ImageObject", "url": "https://renta-de-iluminacion.com/img/luminapro-logo.png", "width": 300, "height": 100 },
+  "foundingDate": "2004",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 15, "maxValue": 25 },
+  "slogan": "Transformamos espacios en escenarios memorables",
+  "areaServed": [
+    { "@type": "City", "name": "Ciudad de México" },
+    { "@type": "State", "name": "Estado de México" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Prolongación Paseo de la Reforma 1015",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "postalCode": "01376",
+    "addressCountry": "MX"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+52-55-2722-1736",
+    "contactType": "sales",
+    "availableLanguage": ["Spanish"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/luminapro.mx",
+    "https://www.instagram.com/luminapro_mx",
+    "https://www.tiktok.com/@luminapro_mx",
+    "https://www.youtube.com/@luminapro_mx"
+  ]
+});
+
+const stats = [
+  { number: '+20', label: 'Años de Experiencia', icon: 'fas fa-calendar-alt' },
+  { number: '+3,000', label: 'Eventos Exitosos', icon: 'fas fa-star' },
+  { number: '+500', label: 'Equipos Profesionales', icon: 'fas fa-lightbulb' },
+  { number: '98%', label: 'Clientes Satisfechos', icon: 'fas fa-heart' },
+];
+
+const valores = [
+  { name: 'Excelencia', desc: 'No nos conformamos con lo bueno; buscamos lo excepcional en cada proyecto que emprendemos.', icon: 'fas fa-gem' },
+  { name: 'Compromiso', desc: 'Tu evento es nuestra prioridad. Nos involucramos al 100% para garantizar resultados perfectos.', icon: 'fas fa-handshake' },
+  { name: 'Innovación', desc: 'Estamos en constante evolución, incorporando la última tecnología en iluminación profesional.', icon: 'fas fa-rocket' },
+  { name: 'Pasión', desc: 'Amamos lo que hacemos. Cada haz de luz que diseñamos lleva nuestra pasión por crear experiencias únicas.', icon: 'fas fa-fire' },
+  { name: 'Confiabilidad', desc: 'Contamos con equipos de respaldo para cada evento. Cero fallas, cero improvisaciones.', icon: 'fas fa-shield-alt' },
+  { name: 'Servicio', desc: 'Escuchamos tus necesidades y las convertimos en soluciones de iluminación que superan expectativas.', icon: 'fas fa-users' },
+];
+
+const equipo = [
+  { role: 'Director de Producción', dept: 'Dirección Creativa', desc: 'Liderazgo en el diseño y conceptualización de cada proyecto de iluminación.', icon: 'fas fa-compass' },
+  { role: 'Diseñador de Iluminación', dept: 'Diseño Lumínico', desc: 'Creación de propuestas personalizadas con software profesional de visualización.', icon: 'fas fa-drafting-compass' },
+  { role: 'Técnicos Especializados', dept: 'Operación Técnica', desc: 'Operadores certificados en consolas GrandMA2 y equipos de última generación.', icon: 'fas fa-sliders-h' },
+  { role: 'Coordinación de Eventos', dept: 'Atención al Cliente', desc: 'Acompañamiento integral desde la cotización hasta el desmontaje del evento.', icon: 'fas fa-clipboard-check' },
+];
+
+const serviciosHighlight = [
+  { name: 'Guirnaldas', desc: 'Ambiente romántico', href: '/guirnaldas' },
+  { name: 'Cabezas Móviles', desc: 'Efectos dinámicos', href: '/cabezas-moviles' },
+  { name: 'Iluminación Láser', desc: 'Shows espectaculares', href: '/laser' },
+  { name: 'Luces Arquitectónicas', desc: 'Transforma espacios', href: '/luces-arquitectonicas' },
+  { name: 'Proyector de Gobos', desc: 'Logos y monogramas', href: '/gobos' },
+  { name: 'Sky Tracker', desc: 'Impacto visual', href: '/sky-tracker' },
+  { name: 'Luz Neón', desc: 'Personalización única', href: '/luz-neon' },
+  { name: 'Luz Negra UV', desc: 'Fiestas fluorescentes', href: '/luz-negra' },
+  { name: 'City Color', desc: 'Iluminación ambiental', href: '/city-color' },
+  { name: 'City Light', desc: 'Iluminación decorativa', href: '/city-light' },
+  { name: 'Cascadas LED', desc: 'Elegancia visual', href: '/cascadas-led' },
+  { name: 'Seguidor de Luz', desc: 'Destaca protagonistas', href: '/seguidor-luz' },
+];
+---
+
+<Layout
+  title="Nosotros | LUMINAPRO - 20 Años en Iluminación Profesional"
+  description="Conoce a LUMINAPRO: 20 años iluminando eventos en CDMX. +3,000 eventos exitosos, equipo certificado y tecnología de vanguardia."
+  canonical="/nosotros"
+  ogTitle="Nosotros | LUMINAPRO - +20 Años en Iluminación Profesional para Eventos"
+  schemas={[orgSchema]}
+>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Más de 20 Años Transformando Eventos</h1>
+      <p class="page-hero-subtitle">Somos LUMINAPRO, la empresa líder en iluminación profesional para eventos en Ciudad de México. Nuestra pasión por la luz y el compromiso con la excelencia nos han convertido en el aliado de confianza de miles de clientes.</p>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="historia">
+    <div class="container">
+      <h2 class="section-title">De la Pasión por la Luz a Líderes en Iluminación Profesional</h2>
+      <div class="historia-content">
+        <p>Fundada en 2004, LUMINAPRO nació de la convicción de que la iluminación no es simplemente un elemento técnico, sino un arte que tiene el poder de transformar completamente la experiencia de cualquier evento. Desde nuestros primeros proyectos, nos propusimos elevar los estándares de la industria de iluminación profesional en México.</p>
+        <p>A lo largo de más de dos décadas, hemos evolucionado constantemente, incorporando tecnología de vanguardia, formando un equipo de profesionales apasionados y desarrollando metodologías que garantizan resultados excepcionales en cada proyecto. Nuestra trayectoria nos ha permitido iluminar desde bodas íntimas hasta grandes producciones y eventos corporativos de alto nivel.</p>
+        <p>Hoy, LUMINAPRO es sinónimo de excelencia en iluminación profesional para eventos. No solo rentamos equipos: diseñamos experiencias lumínicas que emocionan, cautivan y permanecen en la memoria de quienes las viven.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        {stats.map((s) => (
+          <div class="stat-card">
+            <i class={s.icon} aria-hidden="true"></i>
+            <span class="stat-number">{s.number}</span>
+            <span class="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores">
+    <div class="container">
+      <h2 class="section-title">Los Pilares que nos Definen</h2>
+      <p class="section-intro">Nuestros valores guían cada decisión y cada proyecto que emprendemos.</p>
+      <div class="valores-grid">
+        {valores.map((v) => (
+          <div class="valor-card">
+            <div class="valor-icon"><i class={v.icon} aria-hidden="true"></i></div>
+            <h3>{v.name}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="equipo">
+    <div class="container">
+      <h2 class="section-title">Profesionales Apasionados</h2>
+      <p class="section-intro">Nuestro equipo combina experiencia técnica con creatividad para crear experiencias lumínicas excepcionales.</p>
+      <div class="equipo-grid">
+        {equipo.map((e) => (
+          <div class="equipo-card">
+            <div class="equipo-icon"><i class={e.icon} aria-hidden="true"></i></div>
+            <h3>{e.role}</h3>
+            <span class="equipo-dept">{e.dept}</span>
+            <p>{e.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS HIGHLIGHT -->
+  <section class="servicios-highlight">
+    <div class="container">
+      <h2 class="section-title">Soluciones de Iluminación Profesional</h2>
+      <div class="servicios-tiles">
+        {serviciosHighlight.map((s) => (
+          <a href={s.href} class="servicio-tile">
+            <h3>{s.name}</h3>
+            <span>{s.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Hagamos Brillar tu Evento</h2>
+      <p>Cuéntanos sobre tu evento y recibe una propuesta personalizada sin compromiso. Nuestro equipo está listo para transformar tu visión en realidad.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5527221736?text=Hola%20LUMINAPRO,%20me%20interesa%20cotizar%20iluminación%20para%20mi%20evento" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
+        </a>
+        <a href="/contacto" class="btn btn-outline">Contactar</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    text-align: center;
+  }
+  .page-hero h1 { margin-bottom: 1.5rem; }
+  .page-hero-subtitle { font-size: 1.25rem; color: var(--color-text-muted); max-width: 750px; margin: 0 auto; line-height: 1.7; }
+
+  .historia { padding: 100px 0; background: var(--color-bg-light); color: var(--color-text-dark); }
+  .historia .section-title { color: var(--color-text-dark); }
+  .historia-content { max-width: 800px; margin: 2rem auto 0; }
+  .historia-content p { color: #555; line-height: 1.8; font-size: 1.0625rem; }
+
+  .stats { padding: 80px 0; background: var(--color-bg-primary); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .stat-card {
+    text-align: center; padding: 2.5rem 1.5rem;
+    background: var(--color-bg-secondary); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .stat-card i { font-size: 2rem; color: var(--color-accent); margin-bottom: 1rem; display: block; }
+  .stat-number { display: block; font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .stat-label { color: var(--color-text-muted); font-size: 0.9375rem; }
+
+  .valores { padding: 100px 0; background: var(--color-bg-light); color: var(--color-text-dark); }
+  .valores .section-title { color: var(--color-text-dark); }
+  .valores .section-intro { color: #666; }
+  .valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .valor-card {
+    background: #fff; border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center;
+  }
+  .valor-icon {
+    width: 60px; height: 60px; margin: 0 auto 1.25rem;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(212,168,75,0.1); border-radius: 16px;
+  }
+  .valor-icon i { color: var(--color-accent); font-size: 1.5rem; }
+  .valor-card h3 { margin-bottom: 0.75rem; color: var(--color-text-dark); }
+  .valor-card p { color: #666; font-size: 0.9375rem; line-height: 1.7; margin-bottom: 0; }
+
+  .equipo { padding: 100px 0; background: var(--color-bg-primary); }
+  .equipo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .equipo-card {
+    text-align: center; padding: 2.5rem 1.5rem;
+    background: var(--color-bg-secondary); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .equipo-icon {
+    width: 80px; height: 80px; margin: 0 auto 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(212,168,75,0.15); border-radius: 50%;
+  }
+  .equipo-icon i { color: var(--color-accent); font-size: 2rem; }
+  .equipo-card h3 { margin-bottom: 0.5rem; font-size: 1.125rem; }
+  .equipo-dept { display: block; color: var(--color-accent); font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
+  .equipo-card p { color: var(--color-text-muted); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 0; }
+
+  .servicios-highlight { padding: 100px 0; background: var(--color-bg-secondary); }
+  .servicios-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .servicio-tile {
+    padding: 1.5rem; background: var(--color-bg-primary); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05); text-align: center;
+  }
+  .servicio-tile:hover { border-color: rgba(212,168,75,0.3); }
+  .servicio-tile h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+  .servicio-tile span { color: var(--color-text-muted); font-size: 0.8125rem; }
+
+  .cta-final { padding: 100px 0; background: var(--color-bg-primary); text-align: center; }
+  .cta-final h2 { margin-bottom: 1rem; }
+  .cta-final > .container > p { color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .valores-grid { grid-template-columns: repeat(2, 1fr); }
+    .equipo-grid { grid-template-columns: repeat(2, 1fr); }
+    .servicios-tiles { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .valores-grid { grid-template-columns: 1fr; }
+    .equipo-grid { grid-template-columns: 1fr; }
+    .servicios-tiles { grid-template-columns: repeat(2, 1fr); }
+    .historia, .stats, .valores, .equipo, .servicios-highlight, .cta-final { padding: 80px 0; }
+  }
+</style>

@@ -1,0 +1,635 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://renta-de-iluminacion.com/#organization",
+  "name": "LUMINAPRO",
+  "alternateName": "LUMINAPRO Iluminación Profesional",
+  "description": "Empresa líder en renta de iluminación profesional para eventos en Ciudad de México. Más de 20 años de experiencia en bodas, XV años, eventos corporativos y conciertos.",
+  "url": "https://renta-de-iluminacion.com",
+  "telephone": "+52-55-2722-1736",
+  "email": "contacto@luminapro.mx",
+  "foundingDate": "2004",
+  "priceRange": "$$",
+  "currenciesAccepted": "MXN",
+  "paymentAccepted": "Efectivo, Tarjeta de Crédito, Tarjeta de Débito, Transferencia Bancaria",
+  "image": ["https://renta-de-iluminacion.com/img/luminapro-logo.png"],
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://renta-de-iluminacion.com/img/luminapro-logo.png",
+    "width": 300,
+    "height": 100
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Prolongación Paseo de la Reforma 1015",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "postalCode": "01376",
+    "addressCountry": "MX",
+    "neighborhood": "Santa Fe"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.3910,
+    "longitude": -99.2838
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Ciudad de México" },
+    { "@type": "State", "name": "Estado de México" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+52-55-2722-1736",
+    "contactType": "sales",
+    "availableLanguage": ["Spanish"],
+    "areaServed": "MX"
+  },
+  "sameAs": [
+    "https://www.facebook.com/luminapro.mx",
+    "https://www.instagram.com/luminapro_mx",
+    "https://www.tiktok.com/@luminapro_mx",
+    "https://www.youtube.com/@luminapro_mx"
+  ]
+});
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Renta de Iluminación Profesional para Eventos",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "LUMINAPRO",
+    "telephone": "+52-55-2722-1736"
+  },
+  "areaServed": ["Ciudad de México", "Estado de México", "México"],
+  "description": "Catálogo completo de renta de iluminación profesional: guirnaldas, cabezas móviles, luz neón, sky tracker, iluminación láser, luz negra UV, city color, cascadas LED y más.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Iluminación Profesional",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de Guirnaldas de Luz" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de Cabezas Móviles" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alquiler de Iluminación Láser" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de City Color LED" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alquiler de Sky Tracker" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de Luz Neón" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de Luz Negra UV" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de Luces Arquitectónicas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alquiler de Cascadas LED" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alquiler de Proyector de Gobos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de City Light" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alquiler de Seguidor de Luz" } }
+    ]
+  }
+});
+
+const services = [
+  { name: 'Guirnaldas', href: '/guirnaldas', img: 'img/guirnaldas/renta-guirnaldas-luz-boda-jardin-cena-elegante.webp', alt: 'Renta de guirnaldas de luz para eventos CDMX', desc: 'Guirnaldas de luz decorativas para crear ambientes cálidos y acogedores en bodas, jardines y eventos sociales.' },
+  { name: 'Luz Neón', href: '/luz-neon', img: 'img/neon/fiesta-neon-luz-uv-accesorios-fluorescentes-evento.webp', alt: 'Renta de luz neón para fiestas y eventos CDMX', desc: 'Renta de luz neón para fiestas y eventos nocturnos. Efectos vibrantes y modernos que transforman cualquier espacio.' },
+  { name: 'Luz Negra', href: '/luz-negra', img: 'img/neon/maquillaje-neon-pintura-corporal-uv-artistico.webp', alt: 'Renta de luz negra UV para fiestas CDMX', desc: 'Renta de luz negra UV para fiestas y eventos nocturnos en CDMX. Efectos fluorescentes impactantes para fiestas temáticas.' },
+  { name: 'City Color', href: '/city-color', img: 'img/city-color/renta-iluminacion-evento-corporativo-salon-azul.webp', alt: 'Iluminación City Color LED para eventos CDMX', desc: 'Iluminación City Color LED para eventos corporativos en CDMX. Potentes bañadores de color para fachadas y espacios amplios.' },
+  { name: 'Sky Tracker', href: '/sky-tracker', img: 'img/skytracker/renta-skytracker-profesional-haz-luz-eventos.webp', alt: 'Alquiler de Sky Tracker para eventos CDMX', desc: 'Alquiler de Sky Tracker - Reflectores de búsqueda al cielo para eventos en CDMX. Máximo impacto visual nocturno.' },
+  { name: 'Cabezas Móviles', href: '/cabezas-moviles', img: 'img/cabezas-moviles/renta-cabezas-moviles-dj-concierto-luces-beam.webp', alt: 'Renta de cabezas móviles para eventos CDMX', desc: 'Renta de cabezas móviles inteligentes para eventos y conciertos en CDMX. Movimiento, color y efectos programables.' },
+  { name: 'Iluminación Láser', href: '/laser', img: 'img/laser/renta-laser-show-festival-concierto-multicolor.webp', alt: 'Alquiler de iluminación láser para eventos', desc: 'Alquiler de iluminación láser profesional para eventos. Shows de luz espectaculares y seguros.' },
+  { name: 'Luces Arquitectónicas', href: '/luces-arquitectonicas', img: 'img/city-color/iluminacion-boda-salon-elegante-rosa-candelabros.webp', alt: 'Iluminación arquitectónica para eventos CDMX', desc: 'Iluminación profesional arquitectónica para eventos corporativos en CDMX. Realza estructuras y crea ambientes únicos.' },
+  { name: 'Cascadas LED', href: '/cascadas-led', img: 'img/index/cascada-luces-led-novios-boda-romantica.webp', alt: 'Alquiler de cascadas LED para eventos CDMX', desc: 'Alquiler de cascadas LED para eventos en CDMX. Cortinas de luz que crean efectos visuales impresionantes.' },
+  { name: 'Proyector de Gobos', href: '/gobos', img: 'img/gobos/renta-gobos-boda-monograma-pista-baile-novios.webp', alt: 'Alquiler de proyectores de gobos para eventos', desc: 'Alquiler de proyectores de gobos personalizados para eventos corporativos. Proyecta logos, patrones y diseños únicos.' },
+  { name: 'City Light', href: '/city-light', img: 'img/city-color/iluminacion-primer-baile-boda-novios-ambar.webp', alt: 'Renta de City Light para eventos CDMX', desc: 'Renta de iluminación arquitectónica LED para eventos en CDMX y Estado de México. Versatilidad y potencia compacta.' },
+  { name: 'Seguidor de Luz', href: '/seguidor-luz', img: 'img/seguidor-de-luz/renta-seguidor-luz-primer-baile-novios-boda.webp', alt: 'Alquiler de seguidor de luz para eventos CDMX', desc: 'Alquiler de seguidor de luz profesional para eventos y presentaciones en CDMX. Destaca a tus protagonistas con precisión.' },
+];
+
+const testimonials = [
+  { name: 'INFLAPY', role: 'Proveedor de Inflables', img: 'img/index/testimonio-cliente-mujer-salon-boda.webp', text: 'Trabajar con LUMINAPRO ha sido excepcional. En eventos familiares donde combinamos inflables con iluminación, el resultado es mágico. Son puntuales, profesionales y siempre superan las expectativas.', link: 'https://inflablesparafiestas.com.mx/', linkText: 'inflablesparafiestas.com.mx' },
+  { name: 'Fantasy Globos', role: 'Decoración con Globos', img: 'img/index/director-produccion-eventos-escenario-tecnico.webp', text: 'La iluminación de LUMINAPRO hace que nuestras decoraciones con globos luzcan espectaculares. Los colores resaltan increíblemente y las fotos quedan perfectas.', link: 'https://fantasyglobos.com.mx/', linkText: 'fantasyglobos.com.mx' },
+  { name: 'Mesas de Dulces', role: 'Postres y Dulces para Eventos', img: 'img/index/coordinadora-eventos-tablet-agenda-profesional.webp', text: 'Nuestras mesas de dulces lucen increíbles con la iluminación de LUMINAPRO. Los tonos cálidos realzan los colores de los postres y crean un ambiente irresistible.', link: 'https://mesas-de-dulces.com/', linkText: 'mesas-de-dulces.com' },
+  { name: 'Sonido para Eventos', role: 'Audio Profesional', img: 'img/index/testimonio-cliente-hombre-joven-profesional.webp', text: 'Sonido e iluminación van de la mano, y con LUMINAPRO la sincronización es perfecta. Juntos creamos experiencias audiovisuales memorables.', link: 'https://sonidoparaeventos.com.mx/', linkText: 'sonidoparaeventos.com.mx' },
+  { name: 'Eventech', role: 'Organizadora de Bodas', img: 'img/index/coordinadora-eventos-wedding-planner-profesional.webp', text: 'Como wedding planners, hemos trabajado con muchos proveedores de iluminación. LUMINAPRO es de los pocos que realmente entienden la visión de nuestras novias.', link: 'https://eventech.mx/', linkText: 'eventech.mx' },
+  { name: 'Avantexpo', role: 'Stands para Eventos', img: 'img/index/testimonio-cliente-empresario-satisfecho-servicio.webp', text: 'Nuestros stands para exposiciones lucen impresionantes con la iluminación de LUMINAPRO. La luz bien diseñada marca la diferencia.', link: 'https://avantexpo.com.mx/', linkText: 'avantexpo.com.mx' },
+];
+
+const aliados = [
+  { name: 'INFLAPY', desc: 'Brincolines, toboganes y juegos inflables para fiestas infantiles y eventos familiares.', img: 'img/index/fiesta-infantil-inflable-castillo-globos.webp', alt: 'INFLAPY - Renta de inflables CDMX', link: 'https://inflablesparafiestas.com.mx/', linkText: 'Visitar INFLAPY' },
+  { name: 'Globos', desc: 'Decoración con globos, arcos, columnas y figuras personalizadas para todo tipo de eventos.', img: 'img/index/arco-globos-rosa-dorado-decoracion-boda.webp', alt: 'Decoración con globos para fiestas CDMX', link: 'https://fantasyglobos.com.mx/', linkText: 'Decoración con globos' },
+  { name: 'Mesa de Dulces', desc: 'Mesas de dulces y postres decoradas para bodas, XV años, bautizos y celebraciones especiales.', img: 'img/index/mesa-postres-macarons-cupcakes-boda-elegante.webp', alt: 'Mesa de dulces para bodas CDMX', link: 'https://mesas-de-dulces.com/', linkText: 'Mesas de dulces' },
+  { name: 'Bocinas', desc: 'Renta de equipo de sonido profesional, bocinas y sistemas de audio para eventos en México.', img: 'img/index/dj-profesional-boda-equipo-sonido-luces.webp', alt: 'Renta de bocinas y sonido para eventos CDMX', link: 'https://sonidoparaeventos.com.mx/', linkText: 'Renta de bocinas' },
+  { name: 'Organizadora de Bodas', desc: 'Wedding planner y coordinación integral de bodas. Hacemos realidad la boda de tus sueños.', img: 'img/index/productora-eventos-coordinando-equipo-montaje.webp', alt: 'Wedding planner en CDMX', link: 'https://eventech.mx/', linkText: 'Organizadora de bodas' },
+  { name: 'Stands para Eventos', desc: 'Diseño y montaje de stands para exposiciones, ferias y eventos corporativos.', img: 'img/index/stand-expo-corporativo-iluminacion-profesional.webp', alt: 'Stands para expos CDMX', link: 'https://avantexpo.com.mx/', linkText: 'Stands para eventos' },
+  { name: 'Renta de Inflables', desc: 'Alquiler de inflables para fiestas y eventos en CDMX. Brincolines, resbaladillas y más.', img: 'img/index/juegos-inflables-team-building-corporativo.webp', alt: 'Renta de inflables CDMX', link: 'https://renta-de-inflables.com/', linkText: 'Renta de inflables' },
+  { name: 'Renta de Podiums', desc: 'Alquiler de podiums, atriles y mobiliario para conferencias, congresos y eventos corporativos.', img: 'img/index/podio-conferencia-iluminacion-azul-corporativa.webp', alt: 'Renta de podiums CDMX', link: 'https://podiumex.com/', linkText: 'Renta de podiums' },
+];
+
+const pilares = [
+  { name: 'Diseño Personalizado', desc: 'Cada evento es único. Creamos propuestas de iluminación a la medida de tu visión, venue y paleta de colores.', img: 'img/index/disenador-iluminacion-planos-oficina-profesional.webp', alt: 'Diseño personalizado de iluminación para eventos' },
+  { name: 'Tecnología de Vanguardia', desc: 'Equipos Martin Professional, Chauvet y ADJ de última generación para resultados de nivel cinematográfico.', img: 'img/index/equipo-cabezas-moviles-robe-consola-dmx-profesional.webp', alt: 'Tecnología de iluminación de vanguardia' },
+  { name: 'Operación Profesional', desc: 'Técnicos certificados presentes durante todo tu evento, controlando cada secuencia en tiempo real.', img: 'img/index/tecnico-iluminacion-grandma2-concierto-profesional.webp', alt: 'Operación profesional de iluminación' },
+  { name: 'Confiabilidad Absoluta', desc: 'Equipos de respaldo en cada evento. Cero improvisaciones, cero fallas, cero preocupaciones.', img: 'img/index/almacen-equipo-iluminacion-cabezas-moviles-renta.webp', alt: 'Confiabilidad absoluta en eventos' },
+];
+---
+
+<Layout
+  title="Renta de Iluminación para Eventos CDMX | LUMINAPRO"
+  description="Iluminación profesional para bodas, XV años y eventos corporativos en CDMX. +20 años de experiencia, +3,000 eventos exitosos. ¡Cotiza gratis hoy!"
+  canonical="/"
+  ogTitle="Renta de Iluminación Profesional para Eventos | LUMINAPRO CDMX"
+  ogDescription="Transformamos tu evento con iluminación profesional. +20 años de experiencia en bodas, XV años, eventos corporativos y conciertos en CDMX."
+  schemas={[localBusinessSchema, serviceSchema]}
+>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 id="hero-title">Expertos en Iluminación Profesional</h1>
+          <p class="hero-subtitle">Diseño, renta y operación de sistemas de iluminación para bodas, eventos corporativos y producciones especiales en CDMX</p>
+          <div class="hero-ctas">
+            <a href="/contacto" class="btn btn-primary">Solicita tu Cotización</a>
+            <a href="/servicios" class="btn btn-outline">Ver Nuestros Servicios</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <p class="hero-intro-text">En LUMINAPRO llevamos más de <strong>20 años transformando espacios en escenarios memorables</strong>. Desde nuestros inicios, hemos sido testigos y protagonistas de la evolución de la industria de iluminación profesional en México, acompañando a miles de clientes en los momentos más importantes de sus vidas: bodas que brillan con luz propia, eventos corporativos que posicionan marcas y producciones que cautivan audiencias.</p>
+          <p class="hero-intro-text">Nuestra trayectoria nos ha permitido construir un equipo de expertos apasionados por su oficio, invertir en tecnología de vanguardia y desarrollar metodologías que garantizan resultados impecables. <strong>Dos décadas de experiencia</strong> respaldan cada proyecto que emprendemos, combinando conocimiento técnico con sensibilidad artística para crear atmósferas que superan expectativas.</p>
+          <div class="hero-experience-badge">
+            <i class="fas fa-award" aria-hidden="true"></i>
+            <span>+20 Años de Experiencia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPUESTA DE VALOR -->
+  <section class="propuesta" aria-labelledby="propuesta-title">
+    <div class="container">
+      <h2 class="section-title" id="propuesta-title">¿Por Qué Elegir LUMINAPRO?</h2>
+      <p class="section-intro">En LUMINAPRO no solo rentamos equipos de iluminación: diseñamos atmósferas que transforman espacios y crean momentos que perduran en la memoria de tus invitados.</p>
+      <div class="pilares-grid">
+        {pilares.map((p) => (
+          <div class="pilar-card">
+            <div class="pilar-img">
+              <img src={p.img} alt={p.alt} loading="lazy" width="400" height="300">
+            </div>
+            <div class="pilar-content">
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios-section" aria-labelledby="servicios-title">
+    <div class="container">
+      <h2 class="section-title" id="servicios-title">Servicios de Iluminación Profesional</h2>
+      <p class="section-intro">Soluciones completas de iluminación para cada tipo de evento, desde la intimidad de una boda hasta la energía de un concierto.</p>
+      <div class="servicios-grid">
+        {services.map((s) => (
+          <div class="servicio-card">
+            <a href={s.href} class="servicio-img">
+              <img src={s.img} alt={s.alt} loading="lazy" width="400" height="300">
+            </a>
+            <div class="servicio-content">
+              <h3>{s.name}</h3>
+              <p>{s.desc}</p>
+              <a href={s.href} class="servicio-link">{s.name} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios" aria-labelledby="testimonios-title">
+    <div class="container">
+      <h2 class="section-title" id="testimonios-title">Lo que Dicen Nuestros Clientes</h2>
+      <p class="section-intro">La satisfacción de nuestros clientes es nuestra mejor carta de presentación. Conoce sus experiencias trabajando con LUMINAPRO.</p>
+      <div class="testimonios-grid">
+        {testimonials.map((t) => (
+          <div class="testimonio-card">
+            <i class="fas fa-quote-right testimonio-quote-icon" aria-hidden="true"></i>
+            <div class="testimonio-header">
+              <div class="testimonio-avatar">
+                <img src={t.img} alt={t.name} loading="lazy" width="70" height="70">
+              </div>
+              <div class="testimonio-info">
+                <p class="testimonio-author">{t.name}</p>
+                <p class="testimonio-role">{t.role}</p>
+              </div>
+            </div>
+            <div class="testimonio-stars">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="testimonio-text">{t.text}</p>
+            <a href={t.link} class="testimonio-link" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-globe" aria-hidden="true"></i> {t.linkText}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALIADOS -->
+  <section class="aliados" aria-labelledby="aliados-title">
+    <div class="container">
+      <h2 class="section-title" id="aliados-title">Nuestros Aliados para tu Evento Perfecto</h2>
+      <p class="section-intro">Trabajamos con los mejores proveedores de la industria para ofrecerte una experiencia integral.</p>
+      <div class="aliados-grid">
+        {aliados.map((a) => (
+          <article class="aliado-card">
+            <div class="aliado-img">
+              <img src={a.img} alt={a.alt} loading="lazy" width="400" height="250">
+            </div>
+            <div class="aliado-content">
+              <h3>{a.name}</h3>
+              <p>{a.desc}</p>
+              <a href={a.link} class="aliado-link" target="_blank" rel="noopener noreferrer">{a.linkText} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto-section" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contacto-wrapper">
+        <div class="contacto-info">
+          <h2 id="contacto-title">¿Listo para Iluminar tu Evento?</h2>
+          <p class="contacto-intro">Contáctanos para más información sobre nuestros servicios.</p>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+            <div class="info-content"><h4>Teléfono</h4><p>55 2722 1736</p></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+            <div class="info-content"><h4>WhatsApp</h4><p>55 2722 1736</p></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+            <div class="info-content"><h4>Dirección</h4><p>Prolongación Paseo de la Reforma 1015, Col. Santa Fe, Ciudad de México, 01376</p></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></div>
+            <div class="info-content"><h4>Cobertura</h4><p>CDMX, Estado de México y eventos nacionales</p></div>
+          </div>
+          <p class="contacto-cta-text"><strong>¿Tu evento es pronto?</strong> No dejes la iluminación al azar. Llámanos ahora o escríbenos por WhatsApp y en menos de 24 horas tendrás una propuesta personalizada sin compromiso. <strong>+3,000 eventos iluminados</strong> respaldan nuestra experiencia.</p>
+        </div>
+        <div class="contacto-form">
+          <h3>Solicita tu Cotización</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+            </div>
+            <div class="form-group">
+              <label for="evento">Tipo de Evento</label>
+              <input type="text" id="evento" name="evento" placeholder="Boda, XV Años, Corporativo...">
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu evento..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp form-submit">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar por WhatsApp
+            </button>
+            <p class="form-note">Te responderemos en menos de 24 horas</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, #0f0f0f 100%);
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(212, 168, 75, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(212, 168, 75, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-left h1 { margin-bottom: 1.5rem; }
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-right {
+    padding-left: 2rem;
+    border-left: 3px solid var(--color-accent);
+  }
+  .hero-intro-text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+  .hero-intro-text:last-of-type { margin-bottom: 0; }
+  .hero-experience-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgba(212, 168, 75, 0.15);
+    border: 1px solid var(--color-accent);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .hero-experience-badge i { color: var(--color-accent); font-size: 1.25rem; }
+  .hero-experience-badge span { font-weight: 600; color: var(--color-accent); }
+
+  /* PROPUESTA */
+  .propuesta {
+    padding: 120px 0;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+  }
+  .propuesta .section-intro { color: #666; }
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .pilar-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  .pilar-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+  .pilar-img img { width: 100%; height: 100%; object-fit: cover; }
+  .pilar-content { padding: 1.5rem; text-align: center; }
+  .pilar-card h3 { margin-bottom: 0.75rem; color: var(--color-text-dark); }
+  .pilar-card p { color: #666; font-size: 0.9375rem; margin-bottom: 0; line-height: 1.6; }
+
+  /* SERVICIOS */
+  .servicios-section {
+    padding: 120px 0;
+    background-color: var(--color-bg-secondary);
+  }
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .servicio-card {
+    background-color: var(--color-bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+  }
+  .servicio-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+  .servicio-img img { width: 100%; height: 100%; object-fit: cover; }
+  .servicio-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .servicio-card h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+  .servicio-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  .servicio-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  .servicio-link:hover { color: #b8923f; }
+
+  /* TESTIMONIOS */
+  .testimonios {
+    padding: 120px 0;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+  }
+  .testimonios .section-title { color: var(--color-text-dark); }
+  .testimonios .section-intro { color: #666; }
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .testimonio-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .testimonio-quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    opacity: 0.1;
+  }
+  .testimonio-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .testimonio-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid var(--color-accent);
+  }
+  .testimonio-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .testimonio-author { font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.25rem; font-size: 1.125rem; }
+  .testimonio-role { font-size: 0.8125rem; color: var(--color-accent); margin-bottom: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .testimonio-stars { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+  .testimonio-stars i { color: #FFB800; font-size: 1rem; }
+  .testimonio-text { font-size: 1rem; color: #555; margin-bottom: 1.5rem; line-height: 1.8; flex-grow: 1; }
+  .testimonio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    margin-top: auto;
+    width: fit-content;
+  }
+  .testimonio-link:hover { background: var(--color-accent); color: #fff; }
+
+  /* ALIADOS */
+  .aliados {
+    padding: 120px 0;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+  }
+  .aliados .section-title { color: var(--color-text-dark); }
+  .aliados .section-intro { color: #666; }
+  .aliados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .aliado-card {
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+  }
+  .aliado-img { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
+  .aliado-img img { width: 100%; height: 100%; object-fit: cover; }
+  .aliado-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+  .aliado-card h3 { margin-bottom: 0.5rem; font-size: 1.125rem; color: var(--color-text-dark); }
+  .aliado-card p { color: #666; font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; flex-grow: 1; }
+  .aliado-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  .aliado-link:hover { color: #b8923f; }
+
+  /* CONTACTO */
+  .contacto-section { padding: 120px 0; background-color: var(--color-bg-primary); }
+  .contacto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contacto-info h2 { text-align: left; margin-bottom: 1rem; }
+  .contacto-intro { color: var(--color-text-muted); margin-bottom: 2.5rem; font-size: 1.125rem; }
+  .info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+  .info-icon {
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px; flex-shrink: 0;
+  }
+  .info-icon i { font-size: 1.25rem; color: var(--color-accent); }
+  .info-content h4 { font-family: var(--font-body); font-weight: 600; margin-bottom: 0.25rem; }
+  .info-content p { color: var(--color-text-muted); margin-bottom: 0; }
+  .contacto-cta-text { margin-top: 2rem; color: var(--color-text-muted); font-size: 1rem; line-height: 1.7; }
+  .contacto-form {
+    background-color: var(--color-bg-secondary);
+    padding: 3rem;
+    border-radius: 8px;
+  }
+  .contacto-form h3 { margin-bottom: 2rem; }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9375rem; }
+  .form-group input,
+  .form-group textarea {
+    width: 100%; padding: 1rem;
+    background-color: var(--color-bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { outline: none; border-color: var(--color-accent); }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--color-text-muted); }
+  .form-submit { width: 100%; }
+  .form-note { text-align: center; margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-right { padding-left: 0; border-left: none; border-top: 3px solid var(--color-accent); padding-top: 2rem; }
+    .pilares-grid { grid-template-columns: repeat(2, 1fr); }
+    .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonios-grid { grid-template-columns: repeat(2, 1fr); }
+    .aliados-grid { grid-template-columns: repeat(2, 1fr); }
+    .contacto-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 768px) {
+    .pilares-grid { grid-template-columns: 1fr; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .testimonios-grid { grid-template-columns: 1fr; }
+    .aliados-grid { grid-template-columns: 1fr; }
+    .propuesta, .servicios-section, .testimonios, .aliados, .contacto-section { padding: 80px 0; }
+  }
+</style>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const nombre = (form.querySelector('#nombre') as HTMLInputElement)?.value || '';
+    const telefono = (form.querySelector('#telefono') as HTMLInputElement)?.value || '';
+    const evento = (form.querySelector('#evento') as HTMLInputElement)?.value || '';
+    const mensaje = (form.querySelector('#mensaje') as HTMLTextAreaElement)?.value || '';
+    const text = `Hola LUMINAPRO, soy ${nombre}. Tel: ${telefono}. Evento: ${evento}. ${mensaje}`;
+    window.open(`https://wa.me/5527221736?text=${encodeURIComponent(text)}`, '_blank');
+  });
+</script>

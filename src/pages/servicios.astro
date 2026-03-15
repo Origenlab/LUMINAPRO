@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Renta de Iluminación Profesional para Eventos",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "LUMINAPRO",
+    "telephone": "+52-55-2722-1736",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Prolongación Paseo de la Reforma 1015",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "01376",
+      "addressCountry": "MX"
+    }
+  },
+  "areaServed": ["Ciudad de México", "Estado de México", "México"],
+  "description": "Catálogo completo de renta de iluminación profesional: guirnaldas, cabezas móviles, luz neón, sky tracker, iluminación láser, luz negra UV, city color, cascadas LED y más."
+});
+
+const services = [
+  { name: 'Guirnaldas de Luz', href: '/guirnaldas', img: 'img/guirnaldas/renta-guirnaldas-luz-boda-jardin-cena-elegante.webp', alt: 'Renta de guirnaldas de luz para eventos CDMX', desc: 'Guirnaldas de luz decorativas para crear ambientes cálidos y acogedores en bodas, jardines y eventos sociales. Perfecto para crear atmósferas románticas e inolvidables.', icon: 'fas fa-star' },
+  { name: 'Cabezas Móviles', href: '/cabezas-moviles', img: 'img/cabezas-moviles/renta-cabezas-moviles-dj-concierto-luces-beam.webp', alt: 'Renta de cabezas móviles para eventos CDMX', desc: 'Cabezas móviles inteligentes para eventos y conciertos. Movimiento, color y efectos programables para crear shows de luz dinámicos e impactantes.', icon: 'fas fa-sync-alt' },
+  { name: 'Iluminación Láser', href: '/laser', img: 'img/laser/renta-laser-show-festival-concierto-multicolor.webp', alt: 'Renta de iluminación láser para eventos', desc: 'Iluminación láser profesional para shows espectaculares y seguros. Efectos de luz multicolor que transforman cualquier espacio en un espectáculo visual.', icon: 'fas fa-bolt' },
+  { name: 'Luces Arquitectónicas', href: '/luces-arquitectonicas', img: 'img/city-color/iluminacion-boda-salon-elegante-rosa-candelabros.webp', alt: 'Iluminación arquitectónica para eventos CDMX', desc: 'Iluminación profesional arquitectónica para realzar estructuras, fachadas y crear ambientes únicos en eventos corporativos y sociales.', icon: 'fas fa-building' },
+  { name: 'Proyector de Gobos', href: '/gobos', img: 'img/gobos/renta-gobos-boda-monograma-pista-baile-novios.webp', alt: 'Renta de proyectores de gobos para eventos', desc: 'Proyectores de gobos personalizados para proyectar logos, monogramas, nombres y diseños únicos en paredes, pisos y techos de tu evento.', icon: 'fas fa-image' },
+  { name: 'Sky Tracker', href: '/sky-tracker', img: 'img/skytracker/renta-skytracker-profesional-haz-luz-eventos.webp', alt: 'Alquiler de Sky Tracker para eventos CDMX', desc: 'Reflectores de búsqueda al cielo para máximo impacto visual nocturno. Haces de luz potentes que se ven a kilómetros de distancia.', icon: 'fas fa-arrow-up' },
+  { name: 'Luz Neón', href: '/luz-neon', img: 'img/neon/fiesta-neon-luz-uv-accesorios-fluorescentes-evento.webp', alt: 'Renta de luz neón para fiestas CDMX', desc: 'Luz neón para fiestas y eventos nocturnos. Efectos vibrantes y modernos que transforman cualquier espacio en una experiencia visual única.', icon: 'fas fa-lightbulb' },
+  { name: 'Luz Negra UV', href: '/luz-negra', img: 'img/neon/maquillaje-neon-pintura-corporal-uv-artistico.webp', alt: 'Renta de luz negra UV para fiestas CDMX', desc: 'Luz negra UV para fiestas temáticas y eventos nocturnos. Efectos fluorescentes impactantes para glow parties y celebraciones especiales.', icon: 'fas fa-moon' },
+  { name: 'City Color', href: '/city-color', img: 'img/city-color/renta-iluminacion-evento-corporativo-salon-azul.webp', alt: 'Renta de City Color LED para eventos CDMX', desc: 'Iluminación City Color LED para bañar con color fachadas, paredes y espacios amplios. Potentes reflectores RGB para ambientación profesional.', icon: 'fas fa-palette' },
+  { name: 'City Light', href: '/city-light', img: 'img/city-color/iluminacion-primer-baile-boda-novios-ambar.webp', alt: 'Renta de City Light para eventos CDMX', desc: 'Iluminación arquitectónica LED compacta y versátil. Ideal para uplighting, bañar paredes y crear ambientes con color en salones y jardines.', icon: 'fas fa-sun' },
+  { name: 'Cascadas LED', href: '/cascadas-led', img: 'img/index/cascada-luces-led-novios-boda-romantica.webp', alt: 'Renta de cascadas LED para eventos CDMX', desc: 'Cortinas de luz LED que crean efectos visuales impresionantes. Cascadas luminosas para bodas, XV años y eventos especiales.', icon: 'fas fa-water' },
+  { name: 'Seguidor de Luz', href: '/seguidor-luz', img: 'img/seguidor-de-luz/renta-seguidor-luz-primer-baile-novios-boda.webp', alt: 'Renta de seguidor de luz para eventos CDMX', desc: 'Seguidor de luz profesional para destacar protagonistas en eventos, presentaciones y shows. Operación precisa con técnico incluido.', icon: 'fas fa-crosshairs' },
+];
+---
+
+<Layout
+  title="Servicios de Iluminación para Eventos | LUMINAPRO"
+  description="Guirnaldas, cabezas móviles, láser, sky tracker y más para tu evento en CDMX. +20 años de experiencia. Cotización gratuita ☎ 55 2722 1736"
+  canonical="/servicios"
+  ogTitle="Renta de Iluminación Profesional CDMX | Guirnaldas, Láser, Cabezas Móviles | LUMINAPRO"
+  schemas={[serviceSchema]}
+>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Nuestros Servicios de Iluminación Profesional</h1>
+      <p class="page-hero-subtitle">Soluciones completas de iluminación para cada tipo de evento. Desde guirnaldas decorativas hasta shows de láser, tenemos el equipo perfecto para transformar tu evento.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-catalog">
+    <div class="container">
+      <div class="services-grid">
+        {services.map((s) => (
+          <a href={s.href} class="service-card">
+            <div class="service-img">
+              <img src={s.img} alt={s.alt} loading="lazy" width="400" height="300">
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class={s.icon} aria-hidden="true"></i></div>
+              <h2>{s.name}</h2>
+              <p>{s.desc}</p>
+              <span class="service-link">Ver Detalles <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿No Sabes Qué Servicio Necesitas?</h2>
+      <p>Contáctanos y nuestros asesores te ayudarán a elegir la iluminación perfecta para tu evento.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5527221736?text=Hola%20LUMINAPRO,%20necesito%20asesoría%20para%20elegir%20iluminación%20para%20mi%20evento" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Asesoría por WhatsApp
+        </a>
+        <a href="/contacto" class="btn btn-outline">Solicitar Cotización</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    text-align: center;
+  }
+  .page-hero h1 { margin-bottom: 1.5rem; }
+  .page-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .services-catalog { padding: 80px 0 120px; background-color: var(--color-bg-primary); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .service-card {
+    background-color: var(--color-bg-secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover { border-color: rgba(212, 168, 75, 0.3); }
+  .service-img { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
+  .service-img img { width: 100%; height: 100%; object-fit: cover; }
+  .service-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
+  .service-icon {
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(212, 168, 75, 0.15);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  .service-icon i { color: var(--color-accent); font-size: 1.25rem; }
+  .service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .service-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+  .service-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  .cta-section {
+    padding: 100px 0;
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+  }
+  .cta-section h2 { margin-bottom: 1rem; }
+  .cta-section > .container > p {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-catalog { padding: 60px 0 80px; }
+  }
+</style>
