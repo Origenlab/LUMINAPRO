@@ -1,4 +1,6 @@
-import sitemap from '@astrojs/sitemap';import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://renta-de-iluminacion.com',
@@ -6,5 +8,5 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto'
   },
-  integrations: [sitemap()],
+  integrations: [mdx(), sitemap()],
 });
